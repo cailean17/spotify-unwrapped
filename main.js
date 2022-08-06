@@ -101,7 +101,7 @@ var nnData= JSON.parse(data);
     
         console.log("CODE" + code);
         //APICtrl.getToken();
-       window.location.href = "http://localhost:8888/";
+       window.location.href = "https://cailean17.github.io/spotify-unwrapped/";
     }
 
     
