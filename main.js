@@ -113,7 +113,7 @@ const APIController = (function() {
 
     const clientId = 'b6b43c44b19b4c6280dd7504715a9b55';
     const clientSecret = '0ec7cbdbe05a4e3cb6f1cb9da6854b9b';
-    const redirect_uri = 'http%3A%2F%2Flocalhost%3A8888%2F';
+    const redirect_uri = 'https%3A%2F%2Fcailean17.github.io%2Fspotify-unwrapped%2F';
     const scope =  'user-top-read';
 
 
