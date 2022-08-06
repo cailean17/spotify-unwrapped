@@ -168,7 +168,7 @@ const APIController = (function() {
          
                 'grant_type': 'authorization_code',
                 'code' : auth_code,
-                'redirect_uri': 'http://localhost:8888/',
+                'redirect_uri': 'https://cailean17.github.io/spotify-unwrapped/',
               
             })
         })
