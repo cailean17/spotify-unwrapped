@@ -216,6 +216,7 @@ const APIController = (function() {
            
         });
         console.log(result.status.toString());
+        console.log(result.body.toString());
         var data = await result.json();
         console.log("Top Artists" + data.items[0].name);
         return data;
