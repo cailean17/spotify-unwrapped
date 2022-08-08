@@ -8,11 +8,11 @@ var nnData= JSON.parse(data);
     function normalizeMoods(mood){
         if(mood == "Calm"){
             return 0.25;
-        } else if(mood == "Energetic"){
+        } else if(mood == "Sad"){
             return 0.5;
         } else if(mood == "Happy"){
             return 0.75;
-        } else if(mood == "Sad"){
+        } else if(mood == "Energetic"){
             return 1.0;
         }
     }
@@ -23,11 +23,11 @@ var nnData= JSON.parse(data);
         if(value <= 0.25){
             return "Calm";
         } else if(value > 0.25 && value <= 0.5){
-            return "Energetic";
+            return "Sad";
         } else if(value > 0.5 && value <= 0.75){
             return "Happy";
         } else if(value > 0.75 && value <= 1.0){
-            return "Sad";
+            return "Energetic";
         }
     }
     var test = normalizeMoods(nnData[1]["mood"])
@@ -51,7 +51,7 @@ var nnData= JSON.parse(data);
     const net = new brain.NeuralNetwork({hiddenLayers:[3]});
 
     const stats = net.train(trainingData, {
-        iterations: 35000,
+        iterations: 30000,
         learningRate: 0.8,
         errorThresh: 0.00005,
     });
