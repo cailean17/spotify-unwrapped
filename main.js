@@ -215,7 +215,7 @@ const APIController = (function() {
 
     const _getTopArtists = async(token) => {
      
-        const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=short_term', {
+        const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=long_term', {
             method:'GET',
             headers: {
                
@@ -260,7 +260,7 @@ const APIController = (function() {
     }
     const _getTopTracks = async(token) => {
      
-        const result = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=short_term', {
+        const result = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=long_term', {
             method:'GET',
             headers: {
                
