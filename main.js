@@ -7,26 +7,26 @@ var nnData= JSON.parse(data);
 
     function normalizeMoods(mood){
         if(mood == "Calm"){
-            return 0.1;
-        } else if(mood == "Sad"){
             return 0.2;
+        } else if(mood == "Sad"){
+            return 0.21;
         } else if(mood == "Happy"){
-            return 0.3;
+            return 0.22;
         } else if(mood == "Energetic"){
-            return 0.4;
+            return 0.23;
         }
     }
 
     function denoramlizeMoods(mood){
         var value = Math.round(mood*10)/10;
         console.log("Value" + value.toString());
-        if(value <= 0.1){
+        if(value <= 0.2){
             return "Calm";
-        } else if(value > 0.1 && value <= 0.2){
+        } else if(value > 0.2 && value <= 0.21){
             return "Sad";
-        } else if(value > 0.2 && value <= 0.3){
+        } else if(value > 0.21 && value <= 0.22){
             return "Happy";
-        } else if(value > 0.3 && value <= 0.4){
+        } else if(value > 0.22 && value <= 0.23){
             return "Energetic";
         }
     }
