@@ -52,6 +52,7 @@ var nnData= JSON.parse(data);
 
     const stats = net.train(trainingData, {
         iterations: 25000,
+        learningRate: 0.8,
         errorThresh: 0.00005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
