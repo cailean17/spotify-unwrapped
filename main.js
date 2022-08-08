@@ -31,7 +31,7 @@ var nnData= JSON.parse(data);
         }
     }
     var test = normalizeMoods(nnData[1]["mood"])
-    console.log("NORMALIZER" + test.toString());
+
     var input = [];
     var output = [];
     const trainingData = [];
@@ -50,7 +50,10 @@ var nnData= JSON.parse(data);
     }
     const net = new brain.NeuralNetwork({hiddenLayers:[3]});
 
-    const stats = net.train(trainingData);
+    const stats = net.train(trainingData, {
+        learningRate: 0.6,
+        errorThresh: 0.00005,
+    });
     console.log("TRAINING" + JSON.stringify(trainingData));
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
