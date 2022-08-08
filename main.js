@@ -348,7 +348,7 @@ const UIController = (function() {
 
         },
         populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis){
-            var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.energy, track1analysis.valence, net);
+            var track1Mood = runNeuralNetwork(0.541, 0.968, 0.505, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.energy, track2analysis.valence, net);
             var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.energy, track3analysis.valence, net);
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
