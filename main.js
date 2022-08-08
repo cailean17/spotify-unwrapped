@@ -7,26 +7,26 @@ var nnData= JSON.parse(data);
 
     function normalizeMoods(mood){
         if(mood == "Calm"){
-            return 0.2;
+            return 0.25;
         } else if(mood == "Sad"){
-            return 0.21;
+            return 0.5;
         } else if(mood == "Happy"){
-            return 0.22;
+            return 0.75;
         } else if(mood == "Energetic"){
-            return 0.23;
+            return 1.0;
         }
     }
 
     function denoramlizeMoods(mood){
         var value = Math.round(mood*10)/10;
         console.log("Value" + value.toString());
-        if(value <= 0.2){
+        if(value <= 0.25){
             return "Calm";
-        } else if(value > 0.2 && value <= 0.21){
+        } else if(value > 0.25 && value <= 0.5){
             return "Sad";
-        } else if(value > 0.21 && value <= 0.22){
+        } else if(value > 0.5 && value <= 0.75){
             return "Happy";
-        } else if(value > 0.22 && value <= 0.23){
+        } else if(value > 0.75 && value <= 1.0){
             return "Energetic";
         }
     }
@@ -53,7 +53,7 @@ var nnData= JSON.parse(data);
     const stats = net.train(trainingData, {
         iterations: 30000,
         learningRate: 0.8,
-        //errorThresh: 0.00005,
+        errorThresh: 0.00005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
     
