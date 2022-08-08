@@ -37,7 +37,7 @@ var nnData= JSON.parse(data);
     const trainingData = [];
   
     for(let i = 0; i<nnData.length; i++){
-             input.push({"danceability" : nnData[i]["danceability"], "energy" : nnData[i]["energy"], "valence" : nnData[i]["valence"]});
+             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"], "speechiness" : nnData[i]["speechiness"]});
              output.push({"mood": normalizeMoods(nnData[i]["mood"])});
 
     }
