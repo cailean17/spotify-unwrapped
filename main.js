@@ -48,17 +48,21 @@ var nnData= JSON.parse(data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[2]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[3]});
 
     const stats = net.train(trainingData);
     console.log("TRAINING" + JSON.stringify(trainingData));
     
-    function runNeuralNetwork(danceability, energy, valence,net) {
+    function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
            
             var raw_result = net.run({
                 danceability: danceability,
+                acousticness: acousticness,
                 energy: energy,
+                instrumentalness:instrumentalness,
+                liveness:liveness,
                 valence: valence,
+                speechiness:speechiness
             })
 
             console.log("Initial" + JSON.stringify(raw_result));
@@ -348,9 +352,9 @@ const UIController = (function() {
 
         },
         populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis){
-            var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.energy, track1analysis.valence, net);
-            var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.energy, track2analysis.valence, net);
-            var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.energy, track3analysis.valence, net);
+            var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
+            var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
+            var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, track3analysis.speechiness, net);
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
