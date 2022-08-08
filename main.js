@@ -38,7 +38,7 @@ var nnData= JSON.parse(data);
   
     for(let i = 0; i<nnData.length; i++){
              input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"], "speechiness" : nnData[i]["speechiness"]});
-             output.push({"mood": nnData[i]["mood"]});
+             output.push({"mood": normalizeMoods(nnData[i]["mood"])});
 
     }
 
@@ -48,7 +48,7 @@ var nnData= JSON.parse(data);
         output:output[i],
         });
     }
-    const net = new brain.recurrent.LSTM();
+    const net = new brain.NeuralNetwork({hiddenLayers:[3]});
 
     const stats = net.train(trainingData);
     console.log("TRAINING" + JSON.stringify(trainingData));
@@ -66,7 +66,7 @@ var nnData= JSON.parse(data);
             })
 
             console.log("Initial" + JSON.stringify(raw_result));
-            var final_result = raw_result["mood"]
+            var final_result = denoramlizeMoods(raw_result["mood"])
 
             console.log(stats);
             console.log("TEST" + final_result);
