@@ -385,7 +385,11 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
+            function local_track_playback(token, trackanalysis){
+                return track_playback_function(token, trackanalysis)
+            }
             document.querySelector(DOMElements.topTrack1).innerHTML += 
+            
             ` 
             <div class = "container my-2">
             <div class = "row">
@@ -394,7 +398,7 @@ const UIController = (function() {
                 <div class = "xop-box" style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
-                    <button class="btn" style = "background-color: blue" onclick = '${track_playback_function(token, track1analysis.uri)}'> <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+                    <button class="btn" style = "background-color: blue" onclick = 'local_track_playback(${token}, ${track1analysis.uri})'> <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                     </div>
                 </div>
