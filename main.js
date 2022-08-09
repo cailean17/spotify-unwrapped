@@ -51,6 +51,8 @@ var nnData= JSON.parse(data);
     const net = new brain.NeuralNetwork({hiddenLayers:[2]});
 
     const stats = net.train(trainingData, {
+        log:true,
+        logPeriod:100,
         iterations: 40000,
         learningRate: 0.3,
         errorThresh: 0.005,
