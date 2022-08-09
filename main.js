@@ -296,7 +296,8 @@ const APIController = (function() {
             headers:{
                 'Authorization' : 'Bearer ' + token
             },
-            body: new URLSearchParams({
+            
+            body : JSON.stringify({
                 "uris": [track_uri]
 
             })
