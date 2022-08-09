@@ -303,7 +303,7 @@ const APIController = (function() {
         });
         var data = await result.json();
         console.log("PLAYING SONG" + data);
-        return data;
+        //return data;
     }
 
     return {
