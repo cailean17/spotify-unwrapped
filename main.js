@@ -53,7 +53,7 @@ var nnData= JSON.parse(data);
     const stats = net.train(trainingData, {
         log:true,
         logPeriod:100,
-        iterations: 2000,
+        iterations: 10000,
         learningRate: 0.3,
         errorThresh: 0.01,
     });
