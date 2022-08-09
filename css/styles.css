@@ -85,6 +85,7 @@ h2{
 	height: 200px;
 	background-size: 200px;
 	background-repeat: no-repeat;
+	background-position: center;
 	position: relative;
 	cursor: pointer;
 	-webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
