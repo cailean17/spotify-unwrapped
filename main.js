@@ -372,7 +372,7 @@ const UIController = (function() {
                 <div class = "xop-box", style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat">
                  
                     <div class = "overlay">
-                    <i class="bi bi-play"></i>
+                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>
 
                     </div>
                 </div>
