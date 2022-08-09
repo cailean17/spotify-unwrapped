@@ -386,7 +386,7 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
             document.querySelector(DOMElements.topArtist1).addEventListener('click', async() => {
-                
+                console.log("PLAYING");
                 track_playback_function(token, track1analysis.uri);
              });
             document.querySelector(DOMElements.topTrack1).innerHTML += 
