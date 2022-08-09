@@ -81,9 +81,9 @@ h2{
 	visibility: hidden;
 }
 .xop-box {
-	width: 200px;
-	height: 200px;
-	background-size: 640px;
+	width: 640px;
+	height: 640px;
+	
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
