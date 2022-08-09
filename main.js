@@ -420,7 +420,13 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-                    <img src="${track2.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
+                <div class = "xop-box", style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat">
+                        
+                    <div class = "overlay">
+                    <i class="fa fa-play-circle-o icon" aria-hidden="true"></i>
+
+                    </div>
+                </div>
                     <p class="lead my-2">${track2.album.name}</p>
                     <p class="lead" style="font-size:15px">${track2.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
@@ -465,7 +471,14 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-                    <img src="${track3.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
+              <div class="col -xs">
+              <div class = "xop-box", style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat">
+                      
+                  <div class = "overlay">
+                  <i class="fa fa-play-circle-o icon" aria-hidden="true"></i>
+
+                  </div>
+              </div>
                     <p class="lead my-2">${track3.album.name}</p>
                     <p class="lead" style="font-size:15px">${track3.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
