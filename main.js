@@ -290,6 +290,22 @@ const APIController = (function() {
         return data;
     }
 
+    const _startPlayback = async(token, track_uri) => {
+        const result = await fetch(`https://api.spotify.com/v1/me/player/play`, {
+            method:'PUT',
+            headers:{
+                'Authorization' : 'Bearer ' + token
+            },
+            body:{
+                "uris": [track_uri]
+
+            }
+        });
+        var data = await result.json();
+        console.log("PLAYING SONG" + data);
+        return data;
+    }
+
     return {
 
         verifyUser() {
@@ -311,6 +327,10 @@ const APIController = (function() {
         },
         getTrackFeatures(token, trackId){
             return _getTrackFeatures(token, trackId);
+        },
+
+        _startPlayback(token, track_uri){
+            return _startPlayback(token, track_uri);
         }
     }
     }
@@ -357,7 +377,7 @@ const UIController = (function() {
             
 
         },
-        populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis){
+        populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function){
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
             var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, track3analysis.speechiness, net);
@@ -371,7 +391,7 @@ const UIController = (function() {
               <div class="col -xs">
                 <div class = "xop-box", style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat">
                  
-                    <div class = "overlay">
+                    <div class = "overlay" onclick = "${track_playback_function()}">
                     <i class="fa fa-play-circle-o icon" aria-hidden="true"></i>
 
                     </div>
@@ -610,7 +630,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
         
          
-            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature);
+            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl._startPlayback);
          
         }
         const loadMusicalDiversity = async() => {
