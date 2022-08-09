@@ -369,8 +369,8 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-                <div class = "xop-box">
-                    <img src="${track1.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
+                <div class = "xop-box", background:"${track1.album.images[0].url}">
+                 
                     <div class = "overlay">
                         <span class= "icon">+</span>
                     </div>
