@@ -329,7 +329,7 @@ const APIController = (function() {
             return _getTrackFeatures(token, trackId);
         },
 
-        _startPlayback(token, track_uri){
+        startPlayback(token, track_uri){
             return _startPlayback(token, track_uri);
         }
     }
@@ -630,7 +630,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
         
          
-            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl._startPlayback, token);
+            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, token);
          
         }
         const loadMusicalDiversity = async() => {
