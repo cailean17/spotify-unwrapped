@@ -81,8 +81,8 @@ h2{
 	visibility: hidden;
 }
 .xop-box {
-	width: 100%;
-	height: 100%;
+	width: 200px;
+	height: 200px;
 	position: relative;
 	cursor: pointer;
 	-webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
