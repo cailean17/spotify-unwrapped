@@ -542,10 +542,8 @@ const UIController = (function() {
           </div>
             </div>
         </div>`
-        document.querySelector(DOMElements.topArtist1).addEventListener('click', async() => {
-            console.log("PLAYING");
-            track_playback_function(token, track1analysis.uri);
-         });
+        document.querySelector(DOMElements.topArtist1).addEventListener('click', 
+            track_playback_function(token, track1analysis.uri));
       
 
 
