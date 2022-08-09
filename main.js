@@ -386,8 +386,8 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
             function local_track_playback(token, trackanalysis){
-                return track_playback_function(token, trackanalysis)
-            }
+                 track_playback_function(token, trackanalysis)
+            };
             document.querySelector(DOMElements.topTrack1).innerHTML += 
             
             ` 
