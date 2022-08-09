@@ -543,7 +543,9 @@ const UIController = (function() {
             </div>
         </div>`
         document.querySelector(DOMElements.topArtist1).addEventListener('click', 
-            track_playback_function(token, track1analysis.uri));
+            function() {
+                track_playback_function(token, track1analysis.uri)
+            });
       
 
 
