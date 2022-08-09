@@ -386,7 +386,7 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
           
-            document.querySelector(DOMElements.topTrack1).innerHTML += 
+            document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
             
             ` 
             <div class = "container my-2">
@@ -438,7 +438,7 @@ const UIController = (function() {
               </div>
           </div>
             </div>
-        </div>`
+        </div>`);
             document.querySelector(DOMElements.topTrack2).innerHTML += 
             ` <div class = "container my-2">
             <div class = "row">
