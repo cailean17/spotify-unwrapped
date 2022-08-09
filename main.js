@@ -296,10 +296,10 @@ const APIController = (function() {
             headers:{
                 'Authorization' : 'Bearer ' + token
             },
-            body:{
+            body: new URLSearchParams({
                 "uris": [track_uri]
 
-            }
+            })
         });
         var data = await result.json();
         console.log("PLAYING SONG" + data);
