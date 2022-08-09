@@ -369,7 +369,12 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
+                <div class = "xop-box">
                     <img src="${track1.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
+                    <div class = "overlay>
+                        <span class= "icon">+</span>
+                    </div>
+                </div>
                     <p class="lead my-2">${track1.album.name}</p>
                     <p class="lead" style="font-size:15px">${track1.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
