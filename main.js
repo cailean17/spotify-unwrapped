@@ -412,12 +412,20 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack2).innerHTML += 
             ` <div class = "container my-2">
             <div class = "row">
-            <div class="col -xs">
+            <div class = "row">
+                    <div class="col -xs">
                     <img src="${track2.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
                     <p class="lead my-2">${track2.album.name}</p>
                     <p class="lead" style="font-size:15px">${track2.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
                     <h1 class = "rating-t"> ${track2Mood} </h1>
+                    </div>
+                <p class="lead" style="font-size:15px">
+                      The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move.
+                </p>
+                <p class="lead" style="font-size:15px">
+                      This song can pack a punch. With its fast paced tempo, and energtic aura, the song ranks with a high energy rating. 
+                </p>
             </div>
             <div class = "col-md">
             <div class = "row justify-content-around">
@@ -444,12 +452,20 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack3).innerHTML +=
             ` <div class = "container my-2">
             <div class = "row">
-            <div class="col -xs">
+            <div class = "row">
+                    <div class="col -xs">
                     <img src="${track3.album.images[0].url}" alt="album cover" style="width:200px;height:200px;">  
                     <p class="lead my-2">${track3.album.name}</p>
                     <p class="lead" style="font-size:15px">${track3.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
                     <h1 class = "rating-t"> ${track3Mood} </h1>
+                    </div>
+              <p class="lead" style="font-size:15px">
+                    The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move.
+              </p>
+              <p class="lead" style="font-size:15px">
+                    This song can pack a punch. With its fast paced tempo, and energtic aura, the song ranks with a high energy rating. 
+              </p>
             </div>
             <div class = "col-md">
             <div class = "row justify-content-around">
