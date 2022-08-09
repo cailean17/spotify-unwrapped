@@ -369,7 +369,7 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-                <div class = "xop-box", style = "background:url(${track1.album.images[0].url});  background-repeat: no-repeat; background-position: center;">
+                <div class = "xop-box", style = "background:url(${track1.album.images[0].url})">
                  
                     <div class = "overlay">
                         <span class= "icon">+</span>

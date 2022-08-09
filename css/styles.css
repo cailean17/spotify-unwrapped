@@ -83,6 +83,8 @@ h2{
 .xop-box {
 	width: 200px;
 	height: 200px;
+	background-size: contain;
+	background-repeat: no-repeat;
 	position: relative;
 	cursor: pointer;
 	-webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
