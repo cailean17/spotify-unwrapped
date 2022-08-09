@@ -115,7 +115,6 @@ h2{
   
   .xop-box .icon {
 	color: #fff;
-	border: solid 5px #fff;
 	
 	left: 0;
 	right: 0;
@@ -131,5 +130,5 @@ h2{
   }
   
   .xop-box:hover .icon {
-	top: 50%;
+	top: 100px;
   }
