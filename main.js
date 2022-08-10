@@ -117,8 +117,8 @@ var nnData= JSON.parse(data);
 
     function determineTrackDescriptions(trackanalysis) {
         var final_description_array = [];
-        print("DANCEABILITY" + trackanalysis.danceability);
-        print("ENERGY" + trackanalysis.energy);
+        console.log("DANCEABILITY" + trackanalysis.danceability);
+        console.log("ENERGY" + trackanalysis.energy);
         if(0.6 < trackanalysis.danceability < 1.0 ){
             var danceability_desc = "The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move."
             final_description_array.push(danceability_desc);
