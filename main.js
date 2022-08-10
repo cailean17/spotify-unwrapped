@@ -425,10 +425,10 @@ const UIController = (function() {
             
 
         },
-       async populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
-            var track1_descriptions =   await determineTrackDescriptions(track1analysis);
-            // var track2_descriptions =   determineTrackDescriptions(track2analysis);
-            // var track3_descriptions =   determineTrackDescriptions(track3analysis);
+       populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
+             track1_descriptions =    determineTrackDescriptions(track1analysis);
+            var track2_descriptions =   determineTrackDescriptions(track2analysis);
+            var track3_descriptions =   determineTrackDescriptions(track3analysis);
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
             var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, track3analysis.speechiness, net);
@@ -509,10 +509,10 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                        The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move.
+                       ${track2_descriptions[0]}
                       </p>
                       <p class="lead" style="font-size:15px">
-                      This song can pack a punch. With its fast paced tempo, and energtic aura, the song ranks with a high energy rating. 
+                       ${track2_descriptions[1]}
                       </p>
              </div>
            
@@ -561,10 +561,10 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                        The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move.
+                      ${track3_descriptions[0]}
                       </p>
                       <p class="lead" style="font-size:15px">
-                      This song can pack a punch. With its fast paced tempo, and energtic aura, the song ranks with a high energy rating. 
+                      ${track3_descriptions[1]}
                       </p>
              </div>
            
