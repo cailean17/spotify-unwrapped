@@ -139,8 +139,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
             console.log("FINAL description" + final_description_array.toString());
     
-            var returned_desc = final_description_array;
-            return returned_desc[0];
+            return final_description_array;
             
         }
         else if(0.45< trackanalysis.energy < 0.6){
@@ -149,8 +148,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
             console.log("FINAL description" + final_description_array.toString());
     
-            var returned_desc = final_description_array;
-            return returned_desc[0];
+            return final_description_array;
         }
         else if(0.0 < trackanalysis.energy < 0.45){
             var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
@@ -158,8 +156,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
             console.log("FINAL description" + final_description_array.toString());
     
-            var returned_desc = final_description_array;
-            return returned_desc[0];
+           return final_description_array;
         }
        
     }
