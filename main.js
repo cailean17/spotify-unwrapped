@@ -150,7 +150,7 @@ var nnData= JSON.parse(data);
         }
         console.log("FINAL description" + final_description_array.toString());
         var returned_desc = final_description_array;
-        return returned_desc;
+        return returned_desc[0];
         
     }
     
@@ -717,12 +717,12 @@ const APPController = (function(UICtrl, APICtrl){
 
         
 
-        DOMInputs.populate_top_artist.addEventListener('click', (event)=> {
+        DOMInputs.populate_top_artist.addEventListener('click', async() => {
            
            loadArtistList();
         })
-        DOMInputs.populate_top_tracks.addEventListener('click', (event) => {
-            event.preventDefault();
+        DOMInputs.populate_top_tracks.addEventListener('click', async() => {
+            
             loadTrackList();
 
          })
