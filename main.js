@@ -149,8 +149,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
         }
         console.log("FINAL description" + final_description_array);
-        var determined_desc = final_description_array
-        return determined_desc;
+        return final_description_array;
         
     }
     
