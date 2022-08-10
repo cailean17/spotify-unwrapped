@@ -424,9 +424,9 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
-            var track1_descriptions = await determineTrackDescriptions(track1analysis);
-            var track2_descriptions = await determineTrackDescriptions(track2analysis);
-            var track3_descriptions = await determineTrackDescriptions(track3analysis);
+            var track1_descriptions =  determineTrackDescriptions(track1analysis);
+            var track2_descriptions =  determineTrackDescriptions(track2analysis);
+            var track3_descriptions =  determineTrackDescriptions(track3analysis);
             document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
             
             ` 
