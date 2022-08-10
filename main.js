@@ -114,6 +114,38 @@ var nnData= JSON.parse(data);
        window.location.href = "https://cailean17.github.io/spotify-unwrapped/";
     }
 
+
+    function determineTrackDescriptions(trackanalysis) {
+        var final_description_array = [];
+        if(0.6 < trackanalysis.danceability < 1.0 ){
+            var danceability_desc = "The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move."
+            final_description_array.push(danceability_desc);
+        }
+        else if(0.45< trackanalysis.danceability < 0.6){
+            var danceability_desc = "This song ranks with an average danceability. Dancing is cool but be vary that some might not see eye to eye."
+            final_description_array.push(danceability_desc);
+        }
+        else if(0.0 < trackanalysis.danceability < 0.45){
+            var danceability_desc = "This song ranks with a low danceability. Maybe stay put for this one."
+            final_description_array.push(danceability_desc);
+        }
+
+        if(0.6 < trackanalysis.energy < 1.0 ){
+            var energy_desc = "This song can pack a punch. With its fast paced tempo and energtic aura, the song ranks with a high energy rating. Suitable to start your day with."
+            final_description_array.push(energy_desc);
+        }
+        else if(0.45< trackanalysis.energy < 0.6){
+            var energy_desc = "With an average energy rating, this song can still uplift making it suitable for any setting."
+            final_description_array.push(energy_desc);
+        }
+        else if(0.0 < trackanalysis.energy < 0.45){
+            var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
+            final_description_array.push(energy_desc);
+        }
+
+        return final_description_array;
+        
+    }
     
 
 
@@ -386,7 +418,9 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
-          
+            var track1_descriptions = determineTrackDescriptions(track1analysis);
+            var track2_descriptions = determineTrackDescriptions(track2analysis);
+            var track3_descriptions = determineTrackDescriptions(track3analysis);
             document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
             
             ` 
@@ -409,10 +443,10 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                        The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move.
+                      ${track1_descriptions[0]}
                       </p>
                       <p class="lead" style="font-size:15px">
-                      This song can pack a punch. With its fast paced tempo, and energtic aura, the song ranks with a high energy rating. 
+                      ${track1_descriptions[1]}
                       </p>
              </div>
            
