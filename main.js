@@ -426,7 +426,7 @@ const UIController = (function() {
 
         },
        populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
-             track1_descriptions =    determineTrackDescriptions(track1analysis);
+            var track1_descriptions =    determineTrackDescriptions(track1analysis);
             var track2_descriptions =   determineTrackDescriptions(track2analysis);
             var track3_descriptions =   determineTrackDescriptions(track3analysis);
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
