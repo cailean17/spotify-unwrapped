@@ -130,7 +130,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
         }
         else if(trackanalysis.danceability > 0.0 && trackanalysis.danceability < 0.45){
-            var danceability_desc = "This song ranks with a low danceability. Try not to dance to this song unless you want to catch some weird looks. Stay put for this one. sdsdsadasdsadasdasdsads "
+            var danceability_desc = "This song ranks with a low danceability. Try not to dance to this song unless you want to catch some weird looks. Stay put for this one.  Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a"
             final_description_array.push(danceability_desc);
             console.log("adding to description");
         }
