@@ -116,7 +116,7 @@ var nnData= JSON.parse(data);
 
 
     function determineTrackDescriptions(trackanalysis) {
-        var final_description_array = ["hello"];
+        var final_description_array = [];
         if(0.6 < trackanalysis.danceability < 1.0 ){
             var danceability_desc = "The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move."
             final_description_array.push(danceability_desc);
@@ -137,19 +137,22 @@ var nnData= JSON.parse(data);
             var energy_desc = "This song can pack a punch. With its fast paced tempo and energtic aura, the song ranks with a high energy rating. Suitable to start your day with."
             final_description_array.push(energy_desc);
             console.log("adding to description");
+            return final_description_array;
         }
         else if(0.45< trackanalysis.energy < 0.6){
             var energy_desc = "With an average energy rating, this song can still uplift making it suitable for any setting."
             final_description_array.push(energy_desc);
             console.log("adding to description");
+            return final_description_array;
         }
         else if(0.0 < trackanalysis.energy < 0.45){
             var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
             final_description_array.push(energy_desc);
             console.log("adding to description");
+            return final_description_array;
         }
         console.log("FINAL description" + final_description_array);
-        return final_description_array;
+     
         
     }
     
