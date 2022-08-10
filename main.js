@@ -130,7 +130,7 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
         }
         else if(trackanalysis.danceability > 0.0 && trackanalysis.danceability < 0.45){
-            var danceability_desc = "This song ranks with a low danceability. Try not to dance to this song unless you want to catch some weird looks. Stay put for this one. "
+            var danceability_desc = "This song ranks with a low danceability. Try not to dance to this song unless you want to catch some weird looks. Stay put for this one. sdsdsadasdsadasdasdsads "
             final_description_array.push(danceability_desc);
             console.log("adding to description");
         }
@@ -153,7 +153,7 @@ var nnData= JSON.parse(data);
             return final_description_array;
         }
         else if(trackanalysis.energy > 0.0 && trackanalysis.energy < 0.45){
-            var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
+            var energy_desc = "This song ranks with a low energy. Due to its slow production, and airy production, its perfect for catching some Zs to. asdasdsadsadsadsadsadsadsadadsadadasdadsad"
             final_description_array.push(energy_desc);
             console.log("adding to description");
             console.log("FINAL description" + final_description_array.toString());
@@ -438,7 +438,7 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
             // console.log("INSIDE DESCRIPTION" + track1_descriptions.toString());
-            document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
+            document.querySelector(DOMElements.topTrack1).innerHTML += 
             
             ` 
             <div class = "container my-2">
@@ -490,7 +490,8 @@ const UIController = (function() {
               </div>
           </div>
             </div>
-        </div>`);
+        </div>`
+
             document.querySelector(DOMElements.topTrack2).innerHTML += 
             ` <div class = "container my-2">
             <div class = "row">
