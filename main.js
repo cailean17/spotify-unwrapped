@@ -467,23 +467,23 @@ const UIController = (function() {
                       </p>
                          
             <div class = "col-md">
-            <div class = "row justify-content-around">
+                <div class = "row justify-content-around">
+                <div class = "col-xs ">
+                <p class="lead my-2">Danceability</p>
+                <h1 class = "rating-t" > ${track1analysis.danceability} </h1>
+           
+              
+            </div>
             <div class = "col-xs ">
-            <p class="lead my-2">Danceability</p>
-            <h1 class = "rating-t" > ${track1analysis.danceability} </h1>
-       
-          
-        </div>
-        <div class = "col-xs ">
-          <p class="lead my-2">Energy</p>
-          <h1 class = "rating-t" >${track1analysis.energy} </h1>
-            
-        </div>
-        <div class = "col-xs mx-2">
-          <p class="lead my-2">Valence</p>
-          <h1 class = "rating-t" > ${track1analysis.valence} </h1>
-            
-        </div>
+              <p class="lead my-2">Energy</p>
+              <h1 class = "rating-t" >${track1analysis.energy} </h1>
+                
+            </div>
+            <div class = "col-xs mx-2">
+              <p class="lead my-2">Valence</p>
+              <h1 class = "rating-t" > ${track1analysis.valence} </h1>
+                
+            </div>
              </div>
            
                 
@@ -569,28 +569,30 @@ const UIController = (function() {
                       <p class="lead" style="font-size:15px">
                       ${track3_descriptions[1]}
                       </p>
+
+                      <div class = "col-md">
+                      <div class = "row justify-content-around">
+                      <div class = "col-xs ">
+                      <p class="lead my-2">Danceability</p>
+                      <h1 class = "rating-t" > ${track3analysis.danceability} </h1>
+                 
+                    
+                  </div>
+                  <div class = "col-xs ">
+                    <p class="lead my-2">Energy</p>
+                    <h1 class = "rating-t" >${track3analysis.energy} </h1>
+                      
+                  </div>
+                  <div class = "col-xs mx-2">
+                    <p class="lead my-2">Valence</p>
+                    <h1 class = "rating-t" > ${track3analysis.valence} </h1>
+                      
+                  </div>
              </div>
            
                 
            
-            <div class = "col-md">
-                <div class = "row justify-content-around">
-                <div class = "col-xs ">
-                <p class="lead my-2">Danceability</p>
-                <h1 class = "rating-t" > ${track3analysis.danceability} </h1>
            
-              
-            </div>
-            <div class = "col-xs ">
-              <p class="lead my-2">Energy</p>
-              <h1 class = "rating-t" >${track3analysis.energy} </h1>
-                
-            </div>
-            <div class = "col-xs mx-2">
-              <p class="lead my-2">Valence</p>
-              <h1 class = "rating-t" > ${track3analysis.valence} </h1>
-                
-            </div>
               </div>
           </div>
             </div>
