@@ -225,6 +225,7 @@ const APIController = (function() {
             }
            
         });
+        console.log("TOKEN for top artists" + token);
         console.log(result.status.toString());
         console.log(result.body.toString());
         var data = await result.json();
