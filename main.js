@@ -427,7 +427,7 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
-   
+            console.log("INSIDE DESCRIPTION" + track1_descriptions.toString);
             document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
             
             ` 
@@ -450,7 +450,7 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                      ${track1_descriptions[0]}
+                      ${track1_descriptions.}
                       </p>
                       <p class="lead" style="font-size:15px">
                       ${track1_descriptions[1]}
