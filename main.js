@@ -115,45 +115,6 @@ var nnData= JSON.parse(data);
     }
 
 
-    function determineTrackDescriptions(trackanalysis) {
-        var final_description_array = [];
-        if(0.6 < trackanalysis.danceability < 1.0 ){
-            var danceability_desc = "The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move."
-            final_description_array.push(danceability_desc);
-            console.log("adding to description");
-        }
-        else if(0.45< trackanalysis.danceability < 0.6){
-            var danceability_desc = "This song ranks with an average danceability. Dancing is cool but be vary that some might not see eye to eye."
-            final_description_array.push(danceability_desc);
-            console.log("adding to description");
-        }
-        else if(0.0 < trackanalysis.danceability < 0.45){
-            var danceability_desc = "This song ranks with a low danceability. Maybe stay put for this one."
-            final_description_array.push(danceability_desc);
-            console.log("adding to description");
-        }
-
-        if(0.6 < trackanalysis.energy < 1.0 ){
-            var energy_desc = "This song can pack a punch. With its fast paced tempo and energtic aura, the song ranks with a high energy rating. Suitable to start your day with."
-            final_description_array.push(energy_desc);
-            console.log("adding to description");
-        }
-        else if(0.45< trackanalysis.energy < 0.6){
-            var energy_desc = "With an average energy rating, this song can still uplift making it suitable for any setting."
-            final_description_array.push(energy_desc);
-            console.log("adding to description");
-        }
-        else if(0.0 < trackanalysis.energy < 0.45){
-            var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
-            final_description_array.push(energy_desc);
-            console.log("adding to description");
-        }
-        console.log("FINAL description" + final_description_array.toString());
-        var returned_desc = final_description_array;
-        return returned_desc;
-        
-    }
-    
 
 
 
@@ -347,6 +308,47 @@ const APIController = (function() {
         //return data;
     }
 
+    
+    const _determineTrackDescriptions = async(trackanalysis) => {
+        var final_description_array = [];
+        if(0.6 < trackanalysis.danceability < 1.0 ){
+            var danceability_desc = "The danceability of this song is on the higher side making it suitable for humans to move their hips and body in conjunction with the rhythm. Therefore, dancing to this song is acceptable. TLDR: don't be afraid to bust a move."
+            final_description_array.push(danceability_desc);
+            console.log("adding to description");
+        }
+        else if(0.45< trackanalysis.danceability < 0.6){
+            var danceability_desc = "This song ranks with an average danceability. Dancing is cool but be vary that some might not see eye to eye."
+            final_description_array.push(danceability_desc);
+            console.log("adding to description");
+        }
+        else if(0.0 < trackanalysis.danceability < 0.45){
+            var danceability_desc = "This song ranks with a low danceability. Maybe stay put for this one."
+            final_description_array.push(danceability_desc);
+            console.log("adding to description");
+        }
+
+        if(0.6 < trackanalysis.energy < 1.0 ){
+            var energy_desc = "This song can pack a punch. With its fast paced tempo and energtic aura, the song ranks with a high energy rating. Suitable to start your day with."
+            final_description_array.push(energy_desc);
+            console.log("adding to description");
+        }
+        else if(0.45< trackanalysis.energy < 0.6){
+            var energy_desc = "With an average energy rating, this song can still uplift making it suitable for any setting."
+            final_description_array.push(energy_desc);
+            console.log("adding to description");
+        }
+        else if(0.0 < trackanalysis.energy < 0.45){
+            var energy_desc = "This song ranks with a low energy. It's giving late night vibes. Perfect for catching some Zs to."
+            final_description_array.push(energy_desc);
+            console.log("adding to description");
+        }
+        console.log("FINAL description" + final_description_array.toString());
+        var returned_desc = final_description_array;
+        return returned_desc;
+        
+    }
+    
+
     return {
 
         verifyUser() {
@@ -372,6 +374,10 @@ const APIController = (function() {
 
         startPlayback(token, track_uri){
             return _startPlayback(token, track_uri);
+        },
+        
+        determineTrackDescriptions(trackanalysis){
+            return _determineTrackDescriptions(trackanalysis);
         }
     }
     }
@@ -418,10 +424,8 @@ const UIController = (function() {
             
 
         },
-        populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
-            var track1_descriptions =  determineTrackDescriptions(track1analysis);
-            var track2_descriptions =  determineTrackDescriptions(track2analysis);
-            var track3_descriptions =  determineTrackDescriptions(track3analysis);
+        populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track1desc, track2desc, track3desc, track_playback_function, token){
+          
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
             var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, track3analysis.speechiness, net);
@@ -451,10 +455,10 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                      ${track1_descriptions[0]}
+                      ${track1desc[0]}
                       </p>
                       <p class="lead" style="font-size:15px">
-                      ${track1_descriptions[1]}
+                      ${track1desc[1]}
                       </p>
              </div>
            
@@ -688,8 +692,8 @@ const APPController = (function(UICtrl, APICtrl){
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
         
          
-            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, token);
-         
+            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.determineTrackDescriptions(track1Feature.danceability), APICtrl.startPlayback, token);
+            UICtrl.pop
         }
         const loadMusicalDiversity = async() => {
             var token  = localStorage.getItem("access_token");
