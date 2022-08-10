@@ -427,7 +427,7 @@ const UIController = (function() {
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
-            console.log("INSIDE DESCRIPTION" + track1_descriptions.toString);
+            console.log("INSIDE DESCRIPTION" + track1_descriptions.toString());
             document.querySelector(DOMElements.topTrack1).insertAdjacentHTML("beforeend", 
             
             ` 
