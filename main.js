@@ -542,7 +542,7 @@ const UIController = (function() {
           </div>
             </div>
         </div>`
-        document.querySelector(DOMElements.topArtist1).addEventListener('click', 
+        document.querySelector(DOMElements.topTrack1).addEventListener('click', 
             function() {
                 track_playback_function(token, track1analysis.uri, false)
             });
@@ -664,6 +664,8 @@ const APPController = (function(UICtrl, APICtrl){
             
 
         });
+
+        
 
         DOMInputs.populate_top_artist.addEventListener('click', async() => {
            
