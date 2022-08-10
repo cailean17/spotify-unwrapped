@@ -717,12 +717,12 @@ const APPController = (function(UICtrl, APICtrl){
 
         
 
-        DOMInputs.populate_top_artist.addEventListener('click', async() => {
+        DOMInputs.populate_top_artist.addEventListener('click', (event)=> {
            
            loadArtistList();
         })
-        DOMInputs.populate_top_tracks.addEventListener('click', async() => {
-           
+        DOMInputs.populate_top_tracks.addEventListener('click', (event) => {
+            event.preventDefault();
             loadTrackList();
 
          })
