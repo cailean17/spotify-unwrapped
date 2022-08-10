@@ -418,7 +418,7 @@ const UIController = (function() {
             
 
         },
-        async opulateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
+        async populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
             var track1_descriptions =  await determineTrackDescriptions(track1analysis);
             var track2_descriptions =  await determineTrackDescriptions(track2analysis);
             var track3_descriptions =  await determineTrackDescriptions(track3analysis);
