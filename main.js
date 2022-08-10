@@ -690,9 +690,10 @@ const APPController = (function(UICtrl, APICtrl){
             const track1Feature = await APICtrl.getTrackFeatures(token, topTracks.items[0].id);
             const track2Feature = await APICtrl.getTrackFeatures(token, topTracks.items[1].id);
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
+            const track1desc = await APICtrl.determineTrackDescriptions(track1Feature);
         
          
-            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.determineTrackDescriptions(track1Feature.danceability), APICtrl.startPlayback, token);
+            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, track1desc, APICtrl.startPlayback, token);
             UICtrl.pop
         }
         const loadMusicalDiversity = async() => {
