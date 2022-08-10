@@ -546,7 +546,14 @@ const UIController = (function() {
             function() {
                 track_playback_function(token, track1analysis.uri, false)
             });
-      
+        document.querySelector(DOMElements.topTrack2).addEventListener('click', 
+        function() {
+            track_playback_function(token, track2analysis.uri, false)
+        });
+        document.querySelector(DOMElements.topTrack3).addEventListener('click', 
+        function() {
+            track_playback_function(token, track3analysis.uri, false)
+        });
 
 
 
