@@ -449,10 +449,10 @@ const UIController = (function() {
                  </div>
                   
                       <p class="lead" style="font-size:15px">
-                      ${track1_descriptions[0]}
+                      ${track1_descriptions[0].toString()}
                       </p>
                       <p class="lead" style="font-size:15px">
-                      ${track1_descriptions[1]}
+                      ${track1_descriptions[1].toString()}
                       </p>
              </div>
            
