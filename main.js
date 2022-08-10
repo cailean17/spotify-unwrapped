@@ -125,12 +125,12 @@ var nnData= JSON.parse(data);
             console.log("adding to description");
         }
         else if(trackanalysis.danceability > 0.45 && trackanalysis.danceability < 0.6){
-            var danceability_desc = "This song ranks with an average danceability. Dancing is cool but be vary that some might not see eye to eye."
+            var danceability_desc = "This song ranks with an average danceability. Not perfect for dancing, but not too bad either. However, be vary that some might not see eye to eye."
             final_description_array.push(danceability_desc);
             console.log("adding to description");
         }
         else if(trackanalysis.danceability > 0.0 && trackanalysis.danceability < 0.45){
-            var danceability_desc = "This song ranks with a low danceability. Maybe stay put for this one."
+            var danceability_desc = "This song ranks with a low danceability. Maybe stay put for this one. "
             final_description_array.push(danceability_desc);
             console.log("adding to description");
         }
@@ -465,28 +465,29 @@ const UIController = (function() {
                       <p class="lead" style="font-size:15px">
                             ${track1_descriptions[1]}
                       </p>
+                         
+            <div class = "col-md">
+            <div class = "row justify-content-around">
+            <div class = "col-xs ">
+            <p class="lead my-2">Danceability</p>
+            <h1 class = "rating-t" > ${track1analysis.danceability} </h1>
+       
+          
+        </div>
+        <div class = "col-xs ">
+          <p class="lead my-2">Energy</p>
+          <h1 class = "rating-t" >${track1analysis.energy} </h1>
+            
+        </div>
+        <div class = "col-xs mx-2">
+          <p class="lead my-2">Valence</p>
+          <h1 class = "rating-t" > ${track1analysis.valence} </h1>
+            
+        </div>
              </div>
            
                 
-           
-            <div class = "col-md">
-                <div class = "row justify-content-around">
-                <div class = "col-xs ">
-                <p class="lead my-2">Danceability</p>
-                <h1 class = "rating-t" > ${track1analysis.danceability} </h1>
-           
-              
-            </div>
-            <div class = "col-xs ">
-              <p class="lead my-2">Energy</p>
-              <h1 class = "rating-t" >${track1analysis.energy} </h1>
-                
-            </div>
-            <div class = "col-xs mx-2">
-              <p class="lead my-2">Valence</p>
-              <h1 class = "rating-t" > ${track1analysis.valence} </h1>
-                
-            </div>
+        
               </div>
           </div>
             </div>
