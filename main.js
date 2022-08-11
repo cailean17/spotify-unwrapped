@@ -498,7 +498,7 @@ const UIController = (function() {
                  <div class = "col-xs px-4 ">
                  <p class = "lead"> Recommendations </p>
                  <div class = "row justify-content-around">
-                 <div class = "xop-box" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
+                 <div class = "xop-box" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" style = "background-color: blue"> <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
