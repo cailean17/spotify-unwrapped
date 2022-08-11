@@ -497,7 +497,7 @@ const UIController = (function() {
                  </div>
                  <div class = "col-xs px-5 ">
                  
-                     <p style="padding: 0px 0px 0px 40px" class = "lead"> Recommendations </p>
+                     <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4">
