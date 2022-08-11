@@ -475,7 +475,7 @@ const UIController = (function() {
                     <h1 class = "rating-t"> ${track1Mood} </h1>
 
                  </div>
-                 <div class = "col-xs ps-xs-5">
+                 <div class = "col-xs ps-5">
                  <p class = "lead"> Recommendations </p>
                  <div class = "row justify-content-around">
                  <p> 1 </p>
