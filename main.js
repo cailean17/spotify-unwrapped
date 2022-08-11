@@ -372,6 +372,9 @@ const APIController = (function() {
     }
 
     const _getRecommendations= async(token, trackFeatures) => {
+        if(token == null){
+            token = await _getToken();
+        }
         const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&limit=3&target_danceability=${trackFeatures.danceability}&target_energy=${trackFeatures.energy}&target_valence=${trackFeatures.valence}`,{
             method:'GET',
             headers:{
