@@ -458,7 +458,7 @@ const UIController = (function() {
             ` 
             <div class = "container my-2">
             <div class = "row">
-            <p class = "lead"> Recommendations </p>
+            
             <div class = "row>
               <div class="col -xs">
                 <div class = "xop-box" style = "background:url(${track1.album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
@@ -468,6 +468,7 @@ const UIController = (function() {
 
                     </div>
                 </div>
+                <p class = "lead"> Recommendations </p>
                     <p class="lead my-2">${track1.album.name}</p>
                     <p class="lead" style="font-size:15px">${track1.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
