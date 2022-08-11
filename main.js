@@ -287,6 +287,9 @@ const APIController = (function() {
     const _getMusicalDiversity = async(token) => {
         var artist_popularities = [];
         var user_genre_list= [];
+        if(token == null){
+            token = await _getToken();
+        }
    
         const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=30', {
             method:'GET',
@@ -314,6 +317,9 @@ const APIController = (function() {
     }
     const _getTopTracks = async(token) => {
      
+        if(token == null){
+            token = await _getToken();
+        }
         const result = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=short_term', {
             method:'GET',
             headers: {
@@ -329,6 +335,9 @@ const APIController = (function() {
     }
 
     const _getTrackFeatures = async(token, trackId) => {
+        if(token == null){
+            token = await _getToken();
+        }
         const result  = await fetch(`https://api.spotify.com/v1/audio-features/${trackId}`, {
            method:'GET',
            headers:{
@@ -343,6 +352,9 @@ const APIController = (function() {
     }
 
     const _startPlayback = async(token, track_uri) => {
+        if(token == null){
+            token = await _getToken();
+        }
         const result = await fetch(`https://api.spotify.com/v1/me/player/play`, {
             method:'PUT',
             headers:{
