@@ -371,6 +371,18 @@ const APIController = (function() {
         //return data;
     }
 
+    const _getRecommendations= async(token, trackFeatures) => {
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&limit=3&target_danceability=${trackFeatures.danceability}&target_energy=${trackFeatures.energy}&target_valence=${trackFeatures.valence}`,{
+            method:'GET',
+            headers:{
+                'Authorization' : 'Bearer ' + token
+            }
+        });
+        console.log("GOT RECOMMENDATIONS" + result.status.toString);
+        var data = await result.json();
+        console.log("recommendations" + data.toString());
+    }
+
     return {
 
         verifyUser() {
@@ -396,6 +408,9 @@ const APIController = (function() {
 
         startPlayback(token, track_uri){
             return _startPlayback(token, track_uri);
+        },
+        getRecommendations(token, trackFeatures){
+            return _getRecommendations(token, trackFeatures);
         }
     }
     }
@@ -442,9 +457,10 @@ const UIController = (function() {
             
 
         },
-       populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, token){
+       populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, recommendation_function, token){
             var track1_descriptions =    determineTrackDescriptions(track1analysis);
             var track2_descriptions =   determineTrackDescriptions(track2analysis);
+            var recommendations = recommendation_function(token, track1analysis);
             var track3_descriptions =   determineTrackDescriptions(track3analysis);
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
@@ -723,7 +739,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
         
          
-            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, token);
+            UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, APICtrl.getRecommendations, token);
          
         }
         const loadMusicalDiversity = async() => {
