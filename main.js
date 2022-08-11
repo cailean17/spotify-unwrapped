@@ -384,6 +384,7 @@ const APIController = (function() {
         console.log("GOT RECOMMENDATIONS" + result.status.toString);
         var data = await result.json();
         console.log("recommendations" + data.toString());
+        return data;
     }
 
     return {
