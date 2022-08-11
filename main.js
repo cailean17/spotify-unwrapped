@@ -265,6 +265,9 @@ const APIController = (function() {
 
     const _getTopArtists = async(token) => {
      
+            if(token == null){
+                token = await _getToken();
+            }
         const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=short_term', {
             method:'GET',
             headers: {
@@ -711,7 +714,7 @@ const APPController = (function(UICtrl, APICtrl){
 
         const verifySpotifyUser = async() => {
         await APICtrl.verifyUser();
-            await APICtrl.getToken();
+            
         
        
         }
