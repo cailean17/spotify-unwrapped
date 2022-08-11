@@ -548,7 +548,7 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-              <div class="col -xs">
+             
               <div class = "xop-box", style = "background:url(${track3.album.images[0].url}) center/200px 200px no-repeat">
                       
                   <div class = "overlay">
