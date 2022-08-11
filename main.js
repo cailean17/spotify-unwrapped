@@ -468,13 +468,14 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead"> Recommendations </p>
+                
                     <p class="lead my-2">${track1.album.name}</p>
                     <p class="lead" style="font-size:15px">${track1.album.artists[0].name}</p>
                     <p class = "lead"> Mood: </p>
                     <h1 class = "rating-t"> ${track1Mood} </h1>
 
                  </div>
+                 <p class = "lead"> Recommendations </p>
                   
                       <p class="lead" style="font-size:15px">
                             ${track1_descriptions[0]}
