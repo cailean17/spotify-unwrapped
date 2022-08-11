@@ -132,3 +132,55 @@ h2{
   .xop-box:hover .icon {
 	top: 100px;
   }
+  .xop-box-small{
+	width: 100px;
+	height: 100px;
+
+	position: relative;
+	cursor: pointer;
+	-webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .xop-box-small:hover {
+	box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.3);
+	bottom: 0;
+	height: 100px;
+  }
+  
+  .xop-box-small .overlay {
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+	opacity: 0;
+	height: 100px;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+  }
+  
+  .xop-box-small:hover .overlay {
+	opacity: 1;
+  }
+  
+  .xop-box-small.icon {
+	color: #fff;
+	
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	margin-top: -2.5rem;
+	top: 0;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	font-size: 4em;
+	line-height: 0.8;
+	transition: .5s ease;
+  }
+  
+  .xop-box-small:hover .icon {
+	top: 100px;
+  }
