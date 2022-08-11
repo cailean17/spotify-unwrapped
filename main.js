@@ -710,8 +710,10 @@ const APPController = (function(UICtrl, APICtrl){
 
 
         const verifySpotifyUser = async() => {
-        await APICtrl.verifyUser(); 
-        await APICtrl.getToken();
+        await APICtrl.verifyUser().then((value) =>{
+            await APICtrl.getToken();
+        }); 
+       
         }
 
 
