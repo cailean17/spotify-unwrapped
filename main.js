@@ -496,9 +496,9 @@ const UIController = (function() {
 
                  </div>
                  <div class = "col-xs px-5 ">
-                 <div class = "pe-4">
-                     <p class = "lead"> Recommendations </p>
-                 </div>
+                 
+                     <p style="padding: 0px 40px 0px 0px" class = "lead"> Recommendations </p>
+                 
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4">
                  <div class = "xop-box-small" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
