@@ -260,7 +260,7 @@ const APIController = (function() {
             }
      
         // console.log("TOKEN" + data.access_token);
-        // return data.access_token;
+         return data.access_token;
     }
 
     const _getTopArtists = async(token) => {
