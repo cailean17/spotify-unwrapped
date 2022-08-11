@@ -174,13 +174,13 @@ h2{
 	margin-top: -2.5rem;
 	top: 0;
 	position: absolute;
-	width: 60px;
-	height: 60px;
+	width: 30px;
+	height: 30px;
 	font-size: 4em;
 	line-height: 0.8;
 	transition: .5s ease;
   }
   
   .xop-box-small:hover .icon {
-	top: 100px;
+	top: 50px;
   }
