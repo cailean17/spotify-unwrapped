@@ -153,7 +153,7 @@ var nnData= JSON.parse(data);
             return final_description_array;
         }
         else if(trackanalysis.energy > 0.0 && trackanalysis.energy < 0.45){
-            var energy_desc = "This song ranks with a low energy. Due to its slow production, and airy production, it's more than perfect for catching some Zs to."
+            var energy_desc = "This song ranks with a low energy. Due to its slow tempo, and airy production, it's more than perfect for catching some Zs to."
             final_description_array.push(energy_desc);
             console.log("adding to description");
             console.log("FINAL description" + final_description_array.toString());
