@@ -686,16 +686,16 @@ const UIController = (function() {
         });
         document.querySelector("#track1_recommendation1album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations[0].uri, false)
+            track_playback_function(token, recommendations.tracks[0].uri, false)
         });
         document.querySelector("#track1_recommendation2album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations[1].uri, false)
+            track_playback_function(token, recommendations.tracks[1].uri, false)
         });
 
         document.querySelector("#track1_recommendation3album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations[2].uri, false)
+            track_playback_function(token, recommendations.tracks[2].uri, false)
         });
 
 
