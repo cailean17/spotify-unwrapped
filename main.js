@@ -533,7 +533,7 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px"; padding-top:10px"> ${recommendations.tracks[2].name}</p>
+                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[2].name}</p>
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
                 </div>
                 </div>
@@ -625,7 +625,7 @@ const UIController = (function() {
 
                         </div>
                     </div>
-                    <p class = "lead" style = "font-size:10px"; padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[2].album.name}</p>
                     </div>
                     </div>
@@ -682,6 +682,46 @@ const UIController = (function() {
                     <h1 class = "rating-t"> ${track3Mood} </h1>
 
                  </div>
+                        <div class = "col-xs px-5 ">
+                        
+                        <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
+                    
+                    <div class = "row justify-content-around">
+                    <div class = "col-xs pe-4">
+                    <div class = "xop-box-small" id = "track3_recommendation1album" style = "background:url(${recommendations_track3.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[0].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[0].album.name}</p>
+                    </div>
+                    <div class = "col-xs px-4 ">
+                    <div class = "xop-box-small" id = "track3_recommendation2album"  style = "background:url(${recommendations_track3.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track3.tracks[1].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[1].album.name}</p>
+                    </div>
+                    <div class = "col-xs ps-4 ">
+                    <div class = "xop-box-small" id = "track3_recommendation3album"  style = "background:url(${recommendations_track3.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[2].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[2].album.name}</p>
+                    </div>
+                    </div>
+                    </div>
                   
                       <p class="lead" style="font-size:15px">
                       ${track3_descriptions[0]}
@@ -752,6 +792,19 @@ const UIController = (function() {
         document.querySelector("#track2_recommendation3album").addEventListener('click', 
         function() {
             track_playback_function(token, recommendations_track2.tracks[2].uri, false)
+        });
+        document.querySelector("#track3_recommendation1album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track3.tracks[0].uri, false)
+        });
+        document.querySelector("#track3_recommendation2album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track3.tracks[1].uri, false)
+        });
+
+        document.querySelector("#track3_recommendation3album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track3.tracks[2].uri, false)
         });
 
 
