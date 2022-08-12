@@ -508,6 +508,7 @@ const UIController = (function() {
 
                     </div>
                 </div>
+                <p> ${recommendations.tracks[0].name}</p>
                 </div>
                 <div class = "col-xs px-4 ">
                 <div class = "xop-box-small" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
