@@ -136,6 +136,9 @@ h2{
 	width: 100px;
 	height: 100px;
 
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	cursor: pointer;
 	-webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
