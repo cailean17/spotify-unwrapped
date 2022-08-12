@@ -501,7 +501,7 @@ const UIController = (function() {
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4">
-                 <div class = "xop-box-small" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
@@ -512,7 +512,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
                 </div>
                 <div class = "col-xs px-4 ">
-                <div class = "xop-box-small" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
@@ -523,7 +523,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
                 </div>
                 <div class = "col-xs ps-4 ">
-                <div class = "xop-box-small" style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
@@ -574,7 +574,7 @@ const UIController = (function() {
             <div class = "row">
             <div class = "row>
               <div class="col -xs">
-                <div class = "xop-box", style = "background:url(${track2.album.images[0].url}) center/200px 200px no-repeat">
+                <div class = "xop-box" id = "track2albumcover" style = "background:url(${track2.album.images[0].url}) center/200px 200px no-repeat">
                         
                     <div class = "overlay">
                     <i class="fa fa-play-circle-o icon" aria-hidden="true"></i>
@@ -626,7 +626,7 @@ const UIController = (function() {
             <div class = "row>
               <div class="col -xs">
              
-              <div class = "xop-box", style = "background:url(${track3.album.images[0].url}) center/200px 200px no-repeat">
+              <div class = "xop-box" id = "track3albumcover" style = "background:url(${track3.album.images[0].url}) center/200px 200px no-repeat">
                       
                   <div class = "overlay">
                   <i class="fa fa-play-circle-o icon" aria-hidden="true"></i>
@@ -676,14 +676,29 @@ const UIController = (function() {
             function() {
                 track_playback_function(token, track1analysis.uri, false)
             });
-        document.querySelector(DOMElements.topTrack2).addEventListener('click', 
+        document.querySelector("#track2albumcover").addEventListener('click', 
         function() {
             track_playback_function(token, track2analysis.uri, false)
         });
-        document.querySelector(DOMElements.topTrack3).addEventListener('click', 
+        document.querySelector("#track3albumcover").addEventListener('click', 
         function() {
             track_playback_function(token, track3analysis.uri, false)
         });
+        document.querySelector("#track1_recommendation1album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations[0].uri, false)
+        });
+        document.querySelector("#track1_recommendation2album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations[1].uri, false)
+        });
+
+        document.querySelector("#track1_recommendation3album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations[2].uri, false)
+        });
+
+
 
 
 
