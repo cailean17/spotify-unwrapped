@@ -156,7 +156,7 @@ h2{
 	overflow: hidden;
 	opacity: 0;
 	height: 100px;
-	
+	display:flex;
 	justify-content: center;
 	align-items: center;
 	-webkit-transition: all 0.5s;
