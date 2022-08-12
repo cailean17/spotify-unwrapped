@@ -465,6 +465,9 @@ const UIController = (function() {
             var track1_descriptions =    determineTrackDescriptions(track1analysis);
             var track2_descriptions =   determineTrackDescriptions(track2analysis);
             var recommendations = await recommendation_function(token, track1analysis);
+            var recommendations_track2 = await recommendation_function(token, track2analysis);
+            var recommendations_track3 = await recommendation_function(token, track2analysis);
+
             var track3_descriptions =   determineTrackDescriptions(track3analysis);
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
             var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
@@ -587,6 +590,46 @@ const UIController = (function() {
                     <h1 class = "rating-t"> ${track2Mood} </h1>
 
                  </div>
+                        <div class = "col-xs px-5 ">
+                        
+                        <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
+                    
+                    <div class = "row justify-content-around">
+                    <div class = "col-xs pe-4">
+                    <div class = "xop-box-small" id = "track2_recommendation1album" style = "background:url(${recommendations_track2.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[0].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[0].album.name}</p>
+                    </div>
+                    <div class = "col-xs px-4 ">
+                    <div class = "xop-box-small" id = "track2_recommendation2album"  style = "background:url(${recommendations_track2.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track2.tracks[1].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[1].album.name}</p>
+                    </div>
+                    <div class = "col-xs ps-4 ">
+                    <div class = "xop-box-small" id = "track2_recommendation3album"  style = "background:url(${recommendations_track2.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px"; padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[2].album.name}</p>
+                    </div>
+                    </div>
+                    </div>
                   
                       <p class="lead" style="font-size:15px">
                             ${track2_descriptions[0]}
@@ -696,6 +739,19 @@ const UIController = (function() {
         document.querySelector("#track1_recommendation3album").addEventListener('click', 
         function() {
             track_playback_function(token, recommendations.tracks[2].uri, false)
+        });
+        document.querySelector("#track2_recommendation1album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track2.tracks[0].uri, false)
+        });
+        document.querySelector("#track2_recommendation2album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track2.tracks[1].uri, false)
+        });
+
+        document.querySelector("#track2_recommendation3album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations_track2.tracks[2].uri, false)
         });
 
 
