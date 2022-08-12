@@ -466,7 +466,7 @@ const UIController = (function() {
             var track2_descriptions =   determineTrackDescriptions(track2analysis);
             var recommendations = await recommendation_function(token, track1analysis);
             var recommendations_track2 = await recommendation_function(token, track2analysis);
-            var recommendations_track3 = await recommendation_function(token, track2analysis);
+            var recommendations_track3 = await recommendation_function(token, track3analysis);
 
             var track3_descriptions =   determineTrackDescriptions(track3analysis);
             var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
