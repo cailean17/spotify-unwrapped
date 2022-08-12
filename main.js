@@ -508,8 +508,8 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[0].name}</p>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[0].album.name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
                 </div>
                 <div class = "col-xs px-4 ">
                 <div class = "xop-box-small" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -519,8 +519,8 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[1].name}</p>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[1].album.name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
                 </div>
                 <div class = "col-xs ps-4 ">
                 <div class = "xop-box-small" style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -530,8 +530,8 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[2].name}</p>
-                <p class = "lead style = "font-size:10px> ${recommendations.tracks[2].album.name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
                 </div>
                 </div>
                 </div>
