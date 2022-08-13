@@ -107,7 +107,7 @@ var nnData= JSON.parse(data);
     function handleRedirect() {
        
         let code = getCode();
-        localStorage.setItem("auth_code", code);
+        sessionStorage.setItem("auth_code", code);
     
         console.log("CODE" + code);
         //APICtrl.getToken();
@@ -209,7 +209,7 @@ const APIController = (function() {
     }
 
     const _getToken = async() =>  {
-        var auth_code = localStorage.getItem('auth_code');
+        var auth_code = sessionStorage.getItem('auth_code');
         console.log("AUTH CODE " + auth_code);
 
         // const body = `client_id=${clientId}&client_secret=${clientSecret}&grant_type=authorization_code&code=${auth_code}&redirect_uri=${redirect_uri}`
@@ -248,11 +248,11 @@ const APIController = (function() {
 
                 if(data.access_token != undefined){
                     access_token = data.access_token;
-                    localStorage.setItem("access_token", access_token);
+                    sessionStorage.setItem("access_token", access_token);
                 }
                 if(data.refresh_token != undefined){
                     refresh_token = data.refresh_token;
-                    localStorage.setItem("refresh_token", refresh_token);
+                    sessionStorage.setItem("refresh_token", refresh_token);
 
                 }
             } else{
@@ -309,7 +309,7 @@ const APIController = (function() {
         console.log("USER GENRE LIST" + user_genre_list.toString());
         const average = (array) => array.reduce((a, b) => a + b) / array.length;
     
-        localStorage.setItem("user_popularity_rating", Math.trunc(average(artist_popularities)));
+        sessionStorage.setItem("user_popularity_rating", Math.trunc(average(artist_popularities)));
         var map = user_genre_list.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
         console.log(map );
        
@@ -867,7 +867,7 @@ const UIController = (function() {
         },
         populatePopularityRating() {
          document.querySelector(DOMElements.underground_mainstream_container).style.visibility = "visible";
-         document.querySelector(DOMElements.popularity_rating).innerHTML = localStorage.getItem("user_popularity_rating");
+         document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
         }
        
      }
@@ -881,7 +881,7 @@ const APPController = (function(UICtrl, APICtrl){
 
         const loadArtistList = async() => {
             // const token = await APICtrl.getToken();
-            var token  = localStorage.getItem("access_token");
+            var token  = sessionStorage.getItem("access_token");
             console.log("LOADING ARTISTS");
             const topArtists = await APICtrl.getTopArtists(token);
          
@@ -891,7 +891,7 @@ const APPController = (function(UICtrl, APICtrl){
         
         const loadTrackList = async() => {
             // const token = await APICtrl.getToken();
-            var token  = localStorage.getItem("access_token");
+            var token  = sessionStorage.getItem("access_token");
             console.log("LOADING TRACKS");
             const topTracks = await APICtrl.getTopTracks(token);
             const track1Feature = await APICtrl.getTrackFeatures(token, topTracks.items[0].id);
@@ -903,7 +903,7 @@ const APPController = (function(UICtrl, APICtrl){
          
         }
         const loadMusicalDiversity = async() => {
-            var token  = localStorage.getItem("access_token");
+            var token  = sessionStorage.getItem("access_token");
             const genreList = await APICtrl.getMusicalDiversity(token);
             UICtrl.populateChart(genreList);
             UICtrl.populatePopularityRating();
