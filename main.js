@@ -458,6 +458,7 @@ const UIController = (function() {
         underground_mainstream_container : "#underground_mainstream",
         popularity_rating : "#music_popularity_rating",
         search_bar_track_recommendation: "#search_bar_track_recommendation",
+        search_bar_enter: "#search_bar_enter",
     }
 
      return {
@@ -971,6 +972,11 @@ const APPController = (function(UICtrl, APICtrl){
          DOMInputs.populate_genre_chart.addEventListener('click', async() => {
            
             loadMusicalDiversity();
+
+         })
+         DOMInputs.search_bar_enter.addEventListener('click', async() => {
+           
+            loadSearchTrackRecommendation();
 
          })
         
