@@ -387,11 +387,11 @@ const APIController = (function() {
         return data;
     }
 
-    const _getSearchedTrackRecommendations = async(token, trackName) => {
+    const _getSearchedTrackRecommendations = async(token, trackName, artist) => {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/search?q=name:${trackName}&type=track`, {
+        const result = await fetch(`https://api.spotify.com/v1/search?q=track:${trackName}&artist:${artist}`, {
             method: 'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
@@ -457,7 +457,8 @@ const UIController = (function() {
         canvas : "#canvas",
         underground_mainstream_container : "#underground_mainstream",
         popularity_rating : "#music_popularity_rating",
-        search_bar_track_recommendation: "#search_bar_track_recommendation",
+        search_bar_track_recommendation_name: "#search_bar_track_recommendation_name",
+        search_bar_track_recommendation_artist: "#search_bar_track_recommendation_artist",
         search_bar_enter: "#search_bar_enter",
     }
 
@@ -892,8 +893,9 @@ const UIController = (function() {
         },
 
         populateSearchedTrackRecommendation(token, search_track_recommendation){
-           query =  document.querySelector(DOMElements.search_bar_track_recommendation).value;
-            var recommendation = search_track_recommendation(token, query);
+           trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
+           artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
+            var recommendation = search_track_recommendation(token, trackName, artist);
         }
        
      }
