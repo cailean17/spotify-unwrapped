@@ -468,6 +468,7 @@ const UIController = (function() {
                 populate_top_artist:document.querySelector(DOMElements.populate_top_artist),
                 populate_top_tracks:document.querySelector(DOMElements.populate_top_tracks),
                 populate_genre_chart:document.querySelector(DOMElements.populate_genre_chart),
+                search_bar_enter:document.querySelector(DOMElements.search_bar_enter),
             }
         },
 
