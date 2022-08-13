@@ -391,7 +391,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const reuslt = await fetch(`https://api.spotify.com/v1/search?q=name:${trackName}&type=track`, {
+        const result = await fetch(`https://api.spotify.com/v1/search?q=name:${trackName}&type=track`, {
             method: 'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
