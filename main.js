@@ -387,6 +387,21 @@ const APIController = (function() {
         return data;
     }
 
+    const _getSearchedTrackRecommendations = async(token, trackName) => {
+        if(token == null){
+            token = await _getToken();
+        }
+        const reuslt = await fetch(`https://api.spotify.com/v1/search?q=name:${trackName}&type=track`, {
+            method: 'GET',
+            headers:{
+                'Authorization' : 'Bearer ' + token
+            }
+        });
+        console.log("SEARCH TRACK RECOMMENDATION" + result.status.toString());
+        var data  = await result.json();
+        return data;
+    }
+
     return {
 
         verifyUser() {
@@ -415,7 +430,10 @@ const APIController = (function() {
         },
         getRecommendations(token, trackFeatures){
             return _getRecommendations(token, trackFeatures);
-        }
+        },
+        getSearchedTrackRecommendations(token, trackName){
+            return _getSearchedTrackRecommendations(token, trackName);
+        },
     }
     }
      
@@ -438,7 +456,8 @@ const UIController = (function() {
         populate_genre_chart: "#populate_genre_chart",
         canvas : "#canvas",
         underground_mainstream_container : "#underground_mainstream",
-        popularity_rating : "#music_popularity_rating"
+        popularity_rating : "#music_popularity_rating",
+        search_bar_track_recommendation: "#search_bar_track_recommendation",
     }
 
      return {
@@ -868,6 +887,11 @@ const UIController = (function() {
         populatePopularityRating() {
          document.querySelector(DOMElements.underground_mainstream_container).style.visibility = "visible";
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
+        },
+
+        populateSearchedTrackRecommendation(token, search_track_recommendation){
+           query =  document.querySelector(DOMElements.search_bar_track_recommendation).value;
+            var recommendation = search_track_recommendation(token, query);
         }
        
      }
@@ -907,6 +931,11 @@ const APPController = (function(UICtrl, APICtrl){
             const genreList = await APICtrl.getMusicalDiversity(token);
             UICtrl.populateChart(genreList);
             UICtrl.populatePopularityRating();
+        }
+
+        const loadSearchTrackRecommendation = async() => {
+            var token  = sessionStorage.getItem("access_token");
+            UICtrl.populateSearchedTrackRecommendation(token, APICtrl.getSearchedTrackRecommendations);
         }
 
 
