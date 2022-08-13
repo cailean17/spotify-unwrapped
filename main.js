@@ -431,8 +431,8 @@ const APIController = (function() {
         getRecommendations(token, trackFeatures){
             return _getRecommendations(token, trackFeatures);
         },
-        getSearchedTrackRecommendations(token, trackName){
-            return _getSearchedTrackRecommendations(token, trackName);
+        getSearchedTrackRecommendations(token, trackName, artist){
+            return _getSearchedTrackRecommendations(token, trackName, artist);
         },
     }
     }
