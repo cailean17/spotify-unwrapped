@@ -893,10 +893,12 @@ const UIController = (function() {
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
         },
 
-       async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function){
+       async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function, get_recommendations, get_track_features){
            trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
            artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
             var search_query = await search_track_recommendation(token, trackName, artist);
+            var track_analysis = await get_track_features(token, search_query.tracks.items[0].id);
+            var recommendations = await get_recommendations(token, track_analysis);
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `
             <div class = "container my-2"> 
@@ -1011,7 +1013,7 @@ const APPController = (function(UICtrl, APICtrl){
 
         const loadSearchTrackRecommendation = async() => {
             var token  = sessionStorage.getItem("access_token");
-            UICtrl.populateSearchedTrackRecommendation(token, APICtrl.getSearchedTrackRecommendations, APICtrl.startPlayback);
+            UICtrl.populateSearchedTrackRecommendation(token, APICtrl.getSearchedTrackRecommendations, APICtrl.startPlayback, APICtrl.getRecommendations, APICtrl.getTrackFeatures);
         }
 
 
