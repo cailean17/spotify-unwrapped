@@ -893,10 +893,10 @@ const UIController = (function() {
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
         },
 
-        populateSearchedTrackRecommendation(token, search_track_recommendation){
+       async  populateSearchedTrackRecommendation(token, search_track_recommendation){
            trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
            artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
-            var search_query = search_track_recommendation(token, trackName, artist);
+            var search_query = await search_track_recommendation(token, trackName, artist);
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `<div class = "row">
             
