@@ -902,7 +902,7 @@ const UIController = (function() {
             
             <div class = "row>
               <div class="col-xs pe-5">
-                <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks[0].images[0].url}) center/200px 200px no-repeat; cursor:pointer">
+                <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
