@@ -904,9 +904,7 @@ const UIController = (function() {
             
             <div class = "row>
               <div class="col-xs pe-5">
-              <p class = "lead>
-              ${search_query.tracks.items[0].name}
-            </p>
+              <p class = "lead"> ${search_query.tracks.items[0].name}</p>
                 <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks.items[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
