@@ -899,12 +899,13 @@ const UIController = (function() {
             var search_query = await search_track_recommendation(token, trackName, artist);
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `
-           
+            <div class = "container my-2"> 
+            <p class = "lead"> ${search_query.tracks.items[0].name}</p>
             <div class = "row">
             
             <div class = "row>
               <div class="col-xs pe-5">
-              <p class = "lead"> ${search_query.tracks.items[0].name}</p>
+             
                 <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks.items[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -965,6 +966,7 @@ const UIController = (function() {
                       <p class="lead" style="font-size:15px">
                            Track Description
                       </p>
+             </div>
              </div>`)
         }
        
