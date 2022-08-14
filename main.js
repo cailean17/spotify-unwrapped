@@ -459,6 +459,7 @@ const UIController = (function() {
         popularity_rating : "#music_popularity_rating",
         search_bar_track_recommendation_name: "#search_bar_track_recommendation_name",
         search_bar_track_recommendation_artist: "#search_bar_track_recommendation_artist",
+        searched_track_recommendation: "#searched_track_recommendation",
         search_bar_enter: "#search_bar_enter",
     }
 
@@ -895,7 +896,73 @@ const UIController = (function() {
         populateSearchedTrackRecommendation(token, search_track_recommendation){
            trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
            artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
-            var recommendation = search_track_recommendation(token, trackName, artist);
+            var search_query = search_track_recommendation(token, trackName, artist);
+            document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
+            `<div class = "row">
+            
+            <div class = "row>
+              <div class="col-xs pe-5">
+                <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks[0].images[0].url}) center/200px 200px no-repeat; cursor:pointer">
+                 
+                    <div class = "overlay" >
+                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                    </div>
+                </div>
+                
+                    <p class="lead my-2">${search_query.tracks[0].album.name}</p>
+                    <p class="lead" style="font-size:15px">${search_query.tracks[0].name}</p>
+                    
+
+                 </div>
+                 <div class = "col-xs px-5 ">
+                 
+                     <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
+                 
+                 <div class = "row justify-content-around">
+                 <div class = "col-xs pe-4">
+                 <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 
+                    <div class = "overlay" >
+                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                    </div>
+                </div>
+                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
+                </div>
+                <div class = "col-xs px-4 ">
+                <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 
+                    <div class = "overlay" >
+                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                    </div>
+                </div>
+                <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[1].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
+                </div>
+                <div class = "col-xs ps-4 ">
+                <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 
+                    <div class = "overlay" >
+                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                    </div>
+                </div>
+                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[2].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
+                </div>
+                </div>
+                </div>
+                  
+                      <p class="lead" style="font-size:15px">
+                            ${track1_descriptions[0]}
+                      </p>
+                      <p class="lead" style="font-size:15px">
+                            ${track1_descriptions[1]}
+                      </p>
+             </div>`)
         }
        
      }
