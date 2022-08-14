@@ -900,13 +900,13 @@ const UIController = (function() {
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `
             <p class = "lead>
-                ${search_query.tracks[0].items.name}
+                ${search_query.tracks.items[0].name}
             </p>
             <div class = "row">
             
             <div class = "row>
               <div class="col-xs pe-5">
-                <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks[0].items.album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
+                <div class = "xop-box" id = "track1albumcover" style = "background:url(${search_query.tracks.items[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
@@ -914,8 +914,8 @@ const UIController = (function() {
                     </div>
                 </div>
                 
-                    <p class="lead my-2">${search_query.tracks[0].items.album.name}</p>
-                    <p class="lead" style="font-size:15px">${search_query.tracks[0].items.album.artists[0].name}</p>
+                    <p class="lead my-2">${search_query.tracks.items[0].album.name}</p>
+                    <p class="lead" style="font-size:15px">${search_query.tracks.items[0].album.artists[0].name}</p>
                     
 
                  </div>
