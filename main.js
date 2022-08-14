@@ -960,12 +960,7 @@ const UIController = (function() {
                 </div>
                 </div>
                   
-                      <p class="lead" style="font-size:15px">
-                           Track Description
-                      </p>
-                      <p class="lead" style="font-size:15px">
-                           Track Description
-                      </p>
+                    
              </div>
              </div>`)
         }
