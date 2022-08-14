@@ -907,7 +907,7 @@ const UIController = (function() {
               <div class="col-xs pe-5">
               <p class = "lead"> ${search_query.tracks.items[0].name}</p>
              
-                <div class = "xop-box" id = "searched_track_${search_query.tracks.items[0].name}_albumcover" style = "background:url(${search_query.tracks.items[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
+                <div class = "xop-box" id = "searched_track_${search_query.tracks.items[0].uri}_albumcover" style = "background:url(${search_query.tracks.items[0].album.images[0].url}) center/200px 200px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
@@ -964,7 +964,7 @@ const UIController = (function() {
                     
              </div>
              </div>`)
-             document.querySelector(`#searched_track_${search_query.tracks.items[0].name}_albumcover`).addEventListener('click', 
+             document.querySelector(`#searched_track_${search_query.tracks.items[0].uri}_albumcover`).addEventListener('click', 
              function() {
                  track_playback_function(token, search_query.tracks.items[0].uri, false)
              });
