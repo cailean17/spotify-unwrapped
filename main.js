@@ -893,7 +893,7 @@ const UIController = (function() {
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
         },
 
-       async  populateSearchedTrackRecommendation(token, search_track_recommendation){
+       async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function){
            trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
            artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
             var search_query = await search_track_recommendation(token, trackName, artist);
@@ -1011,7 +1011,7 @@ const APPController = (function(UICtrl, APICtrl){
 
         const loadSearchTrackRecommendation = async() => {
             var token  = sessionStorage.getItem("access_token");
-            UICtrl.populateSearchedTrackRecommendation(token, APICtrl.getSearchedTrackRecommendations);
+            UICtrl.populateSearchedTrackRecommendation(token, APICtrl.getSearchedTrackRecommendations, APICtrl.startPlayback);
         }
 
 
