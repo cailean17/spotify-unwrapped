@@ -526,7 +526,7 @@ const UIController = (function() {
                      <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
-                 <div class = "col-xs pe-4 trimText">
+                 <div class = "col-xs pe-4" style="max-width: 172px">
                  <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -534,10 +534,10 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
-                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
+                <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
+                <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
                 </div>
-                <div class = "col-xs px-4 trimText">
+                <div class = "col-xs px-4" style="max-width: 172px">
                 <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -548,7 +548,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[1].name}</p>
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
                 </div>
-                <div class = "col-xs ps-4 trimText ">
+                <div class = "col-xs ps-4"  style="max-width: 172px">
                 <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -618,7 +618,7 @@ const UIController = (function() {
                         <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                     
                     <div class = "row justify-content-around">
-                    <div class = "col-xs pe-4">
+                    <div class = "col-xs pe-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track2_recommendation1album" style = "background:url(${recommendations_track2.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -629,7 +629,7 @@ const UIController = (function() {
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[0].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[0].album.name}</p>
                     </div>
-                    <div class = "col-xs px-4 ">
+                    <div class = "col-xs px-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track2_recommendation2album"  style = "background:url(${recommendations_track2.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -640,7 +640,7 @@ const UIController = (function() {
                     <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track2.tracks[1].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[1].album.name}</p>
                     </div>
-                    <div class = "col-xs ps-4 ">
+                    <div class = "col-xs ps-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track2_recommendation3album"  style = "background:url(${recommendations_track2.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -710,7 +710,7 @@ const UIController = (function() {
                         <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                     
                     <div class = "row justify-content-around">
-                    <div class = "col-xs pe-4">
+                    <div class = "col-xs pe-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track3_recommendation1album" style = "background:url(${recommendations_track3.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -721,7 +721,7 @@ const UIController = (function() {
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[0].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[0].album.name}</p>
                     </div>
-                    <div class = "col-xs px-4 ">
+                    <div class = "col-xs px-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track3_recommendation2album"  style = "background:url(${recommendations_track3.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -732,7 +732,7 @@ const UIController = (function() {
                     <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track3.tracks[1].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[1].album.name}</p>
                     </div>
-                    <div class = "col-xs ps-4 ">
+                    <div class = "col-xs ps-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track3_recommendation3album"  style = "background:url(${recommendations_track3.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
@@ -927,7 +927,7 @@ const UIController = (function() {
                      <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
-                 <div class = "col-xs pe-4">
+                 <div class = "col-xs pe-4"  style="max-width: 172px">
                  <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[0].id}_albumcover" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -938,7 +938,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
                 <p class = "lead" style = "font-size:10px">${recommendations.tracks[0].artists[0].name}</p>
                 </div>
-                <div class = "col-xs px-4 ">
+                <div class = "col-xs px-4"  style="max-width: 172px">
                 <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[1].id}_albumcover"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -949,7 +949,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px;  padding-top:10px">${recommendations.tracks[1].name}</p>
                 <p class = "lead" style = "font-size:10px">${recommendations.tracks[1].artists[0].name}</p>
                 </div>
-                <div class = "col-xs ps-4 ">
+                <div class = "col-xs ps-4"  style="max-width: 172px">
                 <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[2].id}_albumcover"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
