@@ -188,3 +188,9 @@ h2{
   .xop-box-small:hover .icon {
 	top: 100px;
   }
+
+  .trimText{
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis
+}

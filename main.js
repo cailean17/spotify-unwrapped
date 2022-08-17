@@ -526,7 +526,7 @@ const UIController = (function() {
                      <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
-                 <div class = "col-xs pe-4 text-truncate">
+                 <div class = "col-xs pe-4 trimText">
                  <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -537,7 +537,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
                 </div>
-                <div class = "col-xs px-4 text-truncate">
+                <div class = "col-xs px-4 trimText">
                 <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -548,7 +548,7 @@ const UIController = (function() {
                 <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[1].name}</p>
                 <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
                 </div>
-                <div class = "col-xs ps-4 text-truncate">
+                <div class = "col-xs ps-4 trimText ">
                 <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
