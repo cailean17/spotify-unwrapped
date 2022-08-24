@@ -402,6 +402,21 @@ const APIController = (function() {
         return data;
     }
 
+    const _getTracksForSpecializedPlaylist = async(token, topTrack1, topTrack2, topTrack3) => {
+        if(token == null){
+            token = await _getToken();
+        }
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${topTrack1},${topTrack2},${topTrack3}&limit=10`,{
+            method: "GET",
+            headers:{
+                'Authorization' : 'Bearer ' + token
+            }
+        });
+        console.log("Getting Specialized Playlist Tracks" + result.status.toString());
+        var data  = await result.json();
+        return data;
+    }
+
     return {
 
         verifyUser() {
@@ -434,6 +449,10 @@ const APIController = (function() {
         getSearchedTrackRecommendations(token, trackName, artist){
             return _getSearchedTrackRecommendations(token, trackName, artist);
         },
+    
+        getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3){
+            return _getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3);
+        }
     }
     }
      
@@ -1011,6 +1030,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track1Feature = await APICtrl.getTrackFeatures(token, topTracks.items[0].id);
             const track2Feature = await APICtrl.getTrackFeatures(token, topTracks.items[1].id);
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
+            const specializedPlaylist = await APICtrl.getTracksForSpecializedPlaylist(token, topTracks.items[0].id,topTracks.items[1].id,topTracks.items[2].id);
         
          
             UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, APICtrl.getRecommendations, token);
@@ -1021,6 +1041,7 @@ const APPController = (function(UICtrl, APICtrl){
             const genreList = await APICtrl.getMusicalDiversity(token);
             UICtrl.populateChart(genreList);
             UICtrl.populatePopularityRating();
+            
         }
 
         const loadSearchTrackRecommendation = async() => {
