@@ -406,7 +406,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_artist=${topTrack1Artist},${topTrack2Artist},${topTrack3Artist}&seed_tracks=${topTrack1},${topTrack2},${topTrack3}&limit=10`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_artists=${topTrack1Artist},${topTrack2Artist},${topTrack3Artist}&seed_tracks=${topTrack1},${topTrack2},${topTrack3}&limit=10`,{
             method: "GET",
             headers:{
                 'Authorization' : 'Bearer ' + token
@@ -450,8 +450,8 @@ const APIController = (function() {
             return _getSearchedTrackRecommendations(token, trackName, artist);
         },
     
-        getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3){
-            return _getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3);
+        getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3, topTrack1Artist, topTrack2Artist, topTrack3Artist){
+            return _getTracksForSpecializedPlaylist(token, topTrack1, topTrack2, topTrack3, topTrack1Artist, topTrack2Artist, topTrack3Artist);
         }
     }
     }
