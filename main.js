@@ -1030,7 +1030,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track1Feature = await APICtrl.getTrackFeatures(token, topTracks.items[0].id);
             const track2Feature = await APICtrl.getTrackFeatures(token, topTracks.items[1].id);
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
-            const specializedPlaylist = await APICtrl.getTracksForSpecializedPlaylist(token, topTracks.items[0].id,topTracks.items[1].id,topTracks.items[2].id,topTracks.items[0].album.artists[0].name,topTracks.items[1].album.artists[0].name,topTracks.items[2].album.artists[0].name);
+            const specializedPlaylist = await APICtrl.getTracksForSpecializedPlaylist(token, topTracks.items[0].id,topTracks.items[1].id,topTracks.items[2].id,topTracks.items[0].album.artists[0].id,topTracks.items[1].album.artists[0].id,topTracks.items[2].album.artists[0].id);
         
          
             UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, APICtrl.getRecommendations, token);
