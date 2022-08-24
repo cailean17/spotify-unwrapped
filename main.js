@@ -402,11 +402,11 @@ const APIController = (function() {
         return data;
     }
 
-    const _getTracksForSpecializedPlaylist = async(token, topTrack1, topTrack2, topTrack3) => {
+    const _getTracksForSpecializedPlaylist = async(token, topTrack1, topTrack2, topTrack3, topTrack1Artist, topTrack2Artist, topTrack3Artist) => {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${topTrack1},${topTrack2},${topTrack3}&limit=10`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_artist=${topTrack1Artist},${topTrack2Artist},${topTrack3Artist}&seed_tracks=${topTrack1},${topTrack2},${topTrack3}&limit=10`,{
             method: "GET",
             headers:{
                 'Authorization' : 'Bearer ' + token
@@ -1030,7 +1030,7 @@ const APPController = (function(UICtrl, APICtrl){
             const track1Feature = await APICtrl.getTrackFeatures(token, topTracks.items[0].id);
             const track2Feature = await APICtrl.getTrackFeatures(token, topTracks.items[1].id);
             const track3Feature = await APICtrl.getTrackFeatures(token, topTracks.items[2].id);
-            const specializedPlaylist = await APICtrl.getTracksForSpecializedPlaylist(token, topTracks.items[0].id,topTracks.items[1].id,topTracks.items[2].id);
+            const specializedPlaylist = await APICtrl.getTracksForSpecializedPlaylist(token, topTracks.items[0].id,topTracks.items[1].id,topTracks.items[2].id,topTracks.items[0].album.artists[0].name,topTracks.items[1].album.artists[0].name,topTracks.items[2].album.artists[0].name);
         
          
             UICtrl.populateTopTracksList(topTracks.items[0], topTracks.items[1], topTracks.items[2], track1Feature, track2Feature, track3Feature, APICtrl.startPlayback, APICtrl.getRecommendations, token);
