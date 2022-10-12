@@ -3,7 +3,6 @@
 A web app using Spotify APIs and Machine Learning to offer personalized recommendations and musical analysis on your unique taste.
 Click each album cover to easily play and preview a track recommendation on your active spotify device. Currently waiting on Quota Extension from Spotify to move out of Development Restricted mode. Users that aren't added to the development list can't use the app yet. Sorry!
 
-Sign in with your spotify account and hit get started!
 website hosted on github pages: https://cailean17.github.io/spotify-unwrapped/
 ![Screenshot 2022-10-11 212731](https://user-images.githubusercontent.com/55571023/195250808-b52da65e-c7af-44b3-8b67-84dddb9b828e.png)
 ![Screenshot 2022-10-11 212627](https://user-images.githubusercontent.com/55571023/195250800-4ebf004a-0646-487a-9bf6-f7abb64cb34f.png)
