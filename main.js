@@ -375,7 +375,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&target_popularity=${trackFeatures.popularity}&limit=3&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&target_acousticness=${trackFeatures.acousticness}&limit=3&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
             method:'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
@@ -546,37 +546,37 @@ const UIController = (function() {
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4" style="max-width: 172px">
-                 <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                     </div>
                 </div>
-                <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
-                <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[0].album.name}</p>
+                <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[1].name}</p>
+                <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
                 </div>
                 <div class = "col-xs px-4" style="max-width: 172px">
-                <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[1].name}</p>
-                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
+                <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[2].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
                 </div>
                 <div class = "col-xs ps-4"  style="max-width: 172px">
-                <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[2].name}</p>
-                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
+                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[3].name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[3].album.name}</p>
                 </div>
                 </div>
                 </div>
@@ -638,37 +638,37 @@ const UIController = (function() {
                     
                     <div class = "row justify-content-around">
                     <div class = "col-xs pe-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track2_recommendation1album" style = "background:url(${recommendations_track2.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    <div class = "xop-box-small" id = "track2_recommendation1album" style = "background:url(${recommendations_track2.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
                         <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                         </div>
                     </div>
-                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[0].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[0].album.name}</p>
-                    </div>
-                    <div class = "col-xs px-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track2_recommendation2album"  style = "background:url(${recommendations_track2.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
-                    
-                        <div class = "overlay" >
-                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
-
-                        </div>
-                    </div>
-                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track2.tracks[1].name}</p>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[1].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[1].album.name}</p>
                     </div>
-                    <div class = "col-xs ps-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track2_recommendation3album"  style = "background:url(${recommendations_track2.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    <div class = "col-xs px-4"  style="max-width: 172px">
+                    <div class = "xop-box-small" id = "track2_recommendation2album"  style = "background:url(${recommendations_track2.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
                         <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                         </div>
                     </div>
-                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
+                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[2].album.name}</p>
+                    </div>
+                    <div class = "col-xs ps-4"  style="max-width: 172px">
+                    <div class = "xop-box-small" id = "track2_recommendation3album"  style = "background:url(${recommendations_track2.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[3].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[3].album.name}</p>
                     </div>
                     </div>
                     </div>
@@ -730,37 +730,37 @@ const UIController = (function() {
                     
                     <div class = "row justify-content-around">
                     <div class = "col-xs pe-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track3_recommendation1album" style = "background:url(${recommendations_track3.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    <div class = "xop-box-small" id = "track3_recommendation1album" style = "background:url(${recommendations_track3.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
                         <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                         </div>
                     </div>
-                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[0].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[0].album.name}</p>
-                    </div>
-                    <div class = "col-xs px-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track3_recommendation2album"  style = "background:url(${recommendations_track3.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
-                    
-                        <div class = "overlay" >
-                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
-
-                        </div>
-                    </div>
-                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track3.tracks[1].name}</p>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[1].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[1].album.name}</p>
                     </div>
-                    <div class = "col-xs ps-4"  style="max-width: 172px">
-                    <div class = "xop-box-small" id = "track3_recommendation3album"  style = "background:url(${recommendations_track3.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    <div class = "col-xs px-4"  style="max-width: 172px">
+                    <div class = "xop-box-small" id = "track3_recommendation2album"  style = "background:url(${recommendations_track3.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                     
                         <div class = "overlay" >
                         <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                         </div>
                     </div>
-                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[2].name}</p>
+                    <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track3.tracks[2].name}</p>
                     <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[2].album.name}</p>
+                    </div>
+                    <div class = "col-xs ps-4"  style="max-width: 172px">
+                    <div class = "xop-box-small" id = "track3_recommendation3album"  style = "background:url(${recommendations_track3.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                    
+                        <div class = "overlay" >
+                        <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                        </div>
+                    </div>
+                    <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[3].name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[3].album.name}</p>
                     </div>
                     </div>
                     </div>
