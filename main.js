@@ -947,28 +947,17 @@ const UIController = (function() {
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4"  style="max-width: 172px">
-                 <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[0].id}_albumcover" style = "background:url(${recommendations.tracks[0].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[1].id}_albumcover" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
                     <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[0].name}</p>
-                <p class = "lead" style = "font-size:10px">${recommendations.tracks[0].artists[0].name}</p>
-                </div>
-                <div class = "col-xs px-4"  style="max-width: 172px">
-                <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[1].id}_albumcover"  style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
-                 
-                    <div class = "overlay" >
-                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
-
-                    </div>
-                </div>
-                <p class = "lead" style = "font-size:10px;  padding-top:10px">${recommendations.tracks[1].name}</p>
+                <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[1].name}</p>
                 <p class = "lead" style = "font-size:10px">${recommendations.tracks[1].artists[0].name}</p>
                 </div>
-                <div class = "col-xs ps-4"  style="max-width: 172px">
+                <div class = "col-xs px-4"  style="max-width: 172px">
                 <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[2].id}_albumcover"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
                     <div class = "overlay" >
@@ -976,8 +965,19 @@ const UIController = (function() {
 
                     </div>
                 </div>
-                <p class = "lead" style = "font-size:10px; padding-top:10px">${recommendations.tracks[2].name} </p>
+                <p class = "lead" style = "font-size:10px;  padding-top:10px">${recommendations.tracks[2].name}</p>
                 <p class = "lead" style = "font-size:10px">${recommendations.tracks[2].artists[0].name}</p>
+                </div>
+                <div class = "col-xs ps-4"  style="max-width: 172px">
+                <div class = "xop-box-small" id = "searched_track_${recommendations.tracks[3].id}_albumcover"  style = "background:url(${recommendations.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
+                 
+                    <div class = "overlay" >
+                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+
+                    </div>
+                </div>
+                <p class = "lead" style = "font-size:10px; padding-top:10px">${recommendations.tracks[3].name} </p>
+                <p class = "lead" style = "font-size:10px">${recommendations.tracks[3].artists[0].name}</p>
                 </div>
                 </div>
                 </div>
