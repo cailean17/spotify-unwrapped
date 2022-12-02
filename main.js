@@ -375,7 +375,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&seed_artists=73sIBHcqh3Z3NyqHKZ7FOL&target_acousticness=${trackFeatures.acousticness}&limit=5&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&seed_artists=73sIBHcqh3Z3NyqHKZ7FOL,2h93pZq0e7k5yf4dywlkpM,6yJ6QQ3Y5l0s0tn7b0arrO&target_acousticness=${trackFeatures.acousticness}&limit=5&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
             method:'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
