@@ -375,7 +375,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&target_acousticness=${trackFeatures.acousticness}&limit=5&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&seed_artists=73sIBHcqh3Z3NyqHKZ7FOL&target_acousticness=${trackFeatures.acousticness}&limit=5&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
             method:'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
@@ -811,42 +811,42 @@ const UIController = (function() {
         });
         document.querySelector("#track1_recommendation1album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations.tracks[0].uri, false)
+            track_playback_function(token, recommendations.tracks[1].uri, false)
         });
         document.querySelector("#track1_recommendation2album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations.tracks[1].uri, false)
+            track_playback_function(token, recommendations.tracks[2].uri, false)
         });
 
         document.querySelector("#track1_recommendation3album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations.tracks[2].uri, false)
+            track_playback_function(token, recommendations.tracks[3].uri, false)
         });
         document.querySelector("#track2_recommendation1album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track2.tracks[0].uri, false)
+            track_playback_function(token, recommendations_track2.tracks[1].uri, false)
         });
         document.querySelector("#track2_recommendation2album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track2.tracks[1].uri, false)
+            track_playback_function(token, recommendations_track2.tracks[2].uri, false)
         });
 
         document.querySelector("#track2_recommendation3album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track2.tracks[2].uri, false)
+            track_playback_function(token, recommendations_track2.tracks[3].uri, false)
         });
         document.querySelector("#track3_recommendation1album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track3.tracks[0].uri, false)
+            track_playback_function(token, recommendations_track3.tracks[1].uri, false)
         });
         document.querySelector("#track3_recommendation2album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track3.tracks[1].uri, false)
+            track_playback_function(token, recommendations_track3.tracks[2].uri, false)
         });
 
         document.querySelector("#track3_recommendation3album").addEventListener('click', 
         function() {
-            track_playback_function(token, recommendations_track3.tracks[2].uri, false)
+            track_playback_function(token, recommendations_track3.tracks[3].uri, false)
         });
 
 
