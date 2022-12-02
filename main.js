@@ -375,7 +375,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&limit=3&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
+        const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${trackFeatures.id}&target_popularity=${trackFeatures.popularity}&limit=3&target_valence=${trackFeatures.valence}&target_loudness=${trackFeatures.loudness}`,{
             method:'GET',
             headers:{
                 'Authorization' : 'Bearer ' + token
