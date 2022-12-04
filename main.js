@@ -55,7 +55,7 @@ var nnData= JSON.parse(data);
         logPeriod:100,
         iterations: 15000,
         learningRate: 0.3,
-        errorThresh: 0.01,
+        errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
     
