@@ -48,7 +48,7 @@ var nnData= JSON.parse(data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[2]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[12]});
 
     const stats = net.train(trainingData, {
         log:true,
