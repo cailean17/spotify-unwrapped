@@ -89,7 +89,7 @@ var testingData = JSON.parse(testing_data);
         let model_accuracy = 0.0;
         let correct_predictions = 0;
         let total_testing_entries = testingData.length;
-        console.log('TESTINGDATACHECK' + testingData[i]["mood"]);
+        console.log('TESTINGDATACHECK' + testingData[1]["mood"]);
         for(let i = 0; i < total_testing_entries; i++){
            var result = net.run({
             danceability: testingData[i]["danceability"],
