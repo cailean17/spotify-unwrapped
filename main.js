@@ -1006,6 +1006,8 @@ const UIController = (function() {
             var search_query = await search_track_recommendation(token, trackName, artist);
             var track_analysis = await get_track_features(token, search_query.tracks.items[0].id);
             var recommendations = await get_recommendations(token, track_analysis);
+            var mood = runNeuralNetwork(track_analysis.danceability, track_analysis.acousticness, track_analysis.energy, track_analysis.instrumentalness, track_analysis.liveness, track_analysis.valence, net);
+            console.log("REC MOOD " + mood);
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `
             <div class = "container my-2"> 
