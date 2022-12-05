@@ -52,6 +52,7 @@ var testingData = JSON.parse(testing_data);
     const net = new brain.NeuralNetwork({hiddenLayers:[3, 4]});
 
     const stats = net.train(trainingData, {
+        activation: 'relu',
         log:true,
         logPeriod:100,
         iterations: 20000,
