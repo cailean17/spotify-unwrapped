@@ -1010,7 +1010,7 @@ const UIController = (function() {
             const data = {
                 labels: labels,
                 datasets: [{
-                label: 'Nicheness over the Years',
+                label: 'Nicheness',
                 fill: true,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -1026,7 +1026,7 @@ const UIController = (function() {
                     scales:{
                         y:{
                             display:true,
-                            text:"# of Artists"
+                            min:50,
                         }
                     }
                 }
