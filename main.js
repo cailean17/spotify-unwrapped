@@ -105,10 +105,12 @@ var testingData = JSON.parse(testing_data);
             correct_predictions++;
         } 
 
-        model_accuracy = correct_predictions / total_testing_entries;
-        return model_accuracy;
+        
 
         }
+        model_accuracy = correct_predictions / total_testing_entries;
+        console.log("MODEL_ACCURACY: " + model_accuracy);
+        return model_accuracy;
      
 
  }
