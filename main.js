@@ -55,7 +55,7 @@ var testingData = JSON.parse(testing_data);
         log:true,
         logPeriod:100,
         iterations: 20000,
-        learningRate: 0.3,
+        learningRate: 0.2,
         errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
