@@ -38,7 +38,7 @@ var testingData = JSON.parse(testing_data);
     const trainingData = [];
   
     for(let i = 0; i<nnData.length; i++){
-             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"], "speechiness" : nnData[i]["speechiness"]});
+             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"]});
              output.push({"mood": normalizeMoods(nnData[i]["mood"])});
 
     }
@@ -61,7 +61,7 @@ var testingData = JSON.parse(testing_data);
     console.log("TRAINING" + JSON.stringify(trainingData));
     testNeuralNetwork(net);
     
-    function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
+    function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, net) {
            
             var raw_result = net.run({
                 danceability: danceability,
@@ -70,7 +70,7 @@ var testingData = JSON.parse(testing_data);
                 instrumentalness:instrumentalness,
                 liveness:liveness,
                 valence: valence,
-                speechiness:speechiness
+            
             })
 
             console.log("Initial" + JSON.stringify(raw_result));
@@ -128,7 +128,7 @@ var testingData = JSON.parse(testing_data);
             instrumentalness: testingData[i]["instrumentalness"],
             liveness: testingData[i]["liveness"],
             valence:testingData[i]["valence"],
-            speechiness:testingData[i]["speechiness"]
+        
         })
         console.log('TESTING DATA MOOD' + result["mood"]);
         var predictedMood = denoramlizeMoods(result["mood"])
@@ -599,9 +599,9 @@ const UIController = (function() {
             var recommendations_track3 = await recommendation_function(token, track3analysis);
 
             var track3_descriptions =   determineTrackDescriptions(track3analysis);
-            var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, track1analysis.speechiness, net);
-            var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, track2analysis.speechiness, net);
-            var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, track3analysis.speechiness, net);
+            var track1Mood = runNeuralNetwork(track1analysis.danceability, track1analysis.acousticness, track1analysis.energy, track1analysis.instrumentalness, track1analysis.liveness, track1analysis.valence, net);
+            var track2Mood = runNeuralNetwork(track2analysis.danceability, track2analysis.acousticness, track2analysis.energy, track2analysis.instrumentalness, track2analysis.liveness, track2analysis.valence, net);
+            var track3Mood = runNeuralNetwork(track3analysis.danceability, track3analysis.acousticness, track3analysis.energy, track3analysis.instrumentalness, track3analysis.liveness, track3analysis.valence, net);
             document.querySelector(DOMElements.topTrack1).innerHTML = track1.name;
             document.querySelector(DOMElements.topTrack2).innerHTML = track2.name;
             document.querySelector(DOMElements.topTrack3).innerHTML = track3.name;
