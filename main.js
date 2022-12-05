@@ -157,6 +157,7 @@ var testingData = JSON.parse(testing_data);
         }
 
         console.log("TOTAL_HAPPY " + total_testing_happy_entries + " PREDICTED HAPPY " + model_happy_predictions);
+        console.log("TOTAL_CALM " + total_testing_calm_entries + " PREDICTED HAPPY " + model_calm_predictions);
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
         console.log("")
