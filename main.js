@@ -1024,7 +1024,7 @@ const UIController = (function() {
         populatePopularityRating() {
          document.querySelector(DOMElements.underground_mainstream_container).style.visibility = "visible";
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
-         populateNicheOverTimeChart();
+         
         },
 
        async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function, get_recommendations, get_track_features){
@@ -1158,6 +1158,7 @@ const APPController = (function(UICtrl, APICtrl){
             const genreList = await APICtrl.getMusicalDiversity(token);
             UICtrl.populateChart(genreList);
             UICtrl.populatePopularityRating();
+            UICtrl.populateNicheOverTimeChart();
             
         }
 
