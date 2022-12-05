@@ -1,8 +1,8 @@
 
     // import myJson from "./mood_data.json" assert {type: 'json'};
     
-var nnData= JSON.parse(data);
-var testingData = JSON.parse(testing_data)
+var nnData = JSON.parse(data);
+var testingData = JSON.parse(testing_data);
 
         
 
