@@ -88,7 +88,37 @@ var testingData = JSON.parse(testing_data);
  function testNeuralNetwork(net){
         let model_accuracy = 0.0;
         let correct_predictions = 0;
+        
+        let model_happy_predictions = 0;
+        let model_sad_predictions = 0;
+        let model_calm_predictions = 0;
+        let model_energetic_predictions = 0;
+
         let total_testing_entries = testingData.length;
+        let total_testing_happy_entries = 0;
+        let total_testing_sad_entries = 0;
+        let total_testing_calm_entries = 0;
+        let total_testing_energetic_entries = 0;
+
+
+
+        testingData.forEach((element) => {
+            if(element["mood"] == "Happy"){
+            total_testing_happy_entries += 1;
+            }
+            else if(element["mood"] ==  "Sad"){
+            total_testing_sad_entries += 1;
+            }
+            else if(element["mood"] == "Calm"){
+            total_testing_calm_entries += 1;
+            }
+            else if(element["mood"] == "Energetic"){
+            total_testing_energetic_entries +=1;
+            }
+            else {
+                console.log("BAD DATA");
+            }
+        })
     
         for(let i = 0; i < total_testing_entries; i++){
            var result = net.run({
@@ -103,19 +133,39 @@ var testingData = JSON.parse(testing_data);
         console.log('TESTING DATA MOOD' + result["mood"]);
         var predictedMood = denoramlizeMoods(result["mood"])
 
+        if(predictedMood == "Happy"){
+            model_happy_predictions += 1;
+        } 
+        else if(predictedMood == "Sad"){
+            model_sad_predictions += 1;
+        }
+        else if(predictedMood == "Calm"){
+            model_calm_predictions += 1;
+        }
+        else if(predictedMood == "Energetic"){
+            model_energetic_predictions += 1;
+        }
+
         if(predictedMood == testingData[i]["mood"]){
             correct_predictions += 1;
+           
         } 
+
 
         
 
         }
+
+        console.log("TOTAL_HAPPY " + total_testing_happy_entries + " PREDICTED HAPPY " + model_happy_predictions);
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
+        console.log("")
         return model_accuracy;
      
 
  }
+
+ 
 
 
 
