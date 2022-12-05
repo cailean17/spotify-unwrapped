@@ -89,7 +89,7 @@ var testingData = JSON.parse(testing_data);
         let model_accuracy = 0.0;
         let correct_predictions = 0;
         let total_testing_entries = testingData.length;
-        console.log('TESTINGDATACHECK' + testingData[1]["mood"]);
+    
         for(let i = 0; i < total_testing_entries; i++){
            var result = net.run({
             danceability: testingData[i]["danceability"],
@@ -100,6 +100,7 @@ var testingData = JSON.parse(testing_data);
             valence:testingData[i]["valence"],
             speechiness:testingData[i]["speechiness"]
         })
+        console.log('TESTING DATA MOOD' + result["mood"]);
         var predictedMood = denoramlizeMoods(result["mood"])
 
         if(predictedMood == testingData[i]["mood"]){
