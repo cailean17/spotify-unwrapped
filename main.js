@@ -1011,6 +1011,7 @@ const UIController = (function() {
                 labels: labels,
                 datasets: [{
                 label: 'Nicheness over the Years',
+                fill: true,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 color : "#FFF",
