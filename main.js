@@ -1023,7 +1023,7 @@ const UIController = (function() {
                 type:"line",
                 data:data,
                 options:{
-                    bezierCurve: true,
+                    tension: 0.5,
                     scales:{
                         y:{
                             display:true,
