@@ -980,7 +980,20 @@ const UIController = (function() {
                 }]
             };
 
-            
+            const canvas = document.querySelector(DOMElements.canvas).getContext('2d');
+            let chart = new Chart(canvas, {
+                type:"bar",
+                data:data,
+                options:{
+                    scales:{
+                        y:{
+                            display:true,
+                            text:"# of Artists"
+                        }
+                    }
+                }
+
+            });
 
         },
         populateNicheOverTimeChart(){
@@ -1024,7 +1037,6 @@ const UIController = (function() {
         populatePopularityRating() {
          document.querySelector(DOMElements.underground_mainstream_container).style.visibility = "visible";
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
-         
         },
 
        async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function, get_recommendations, get_track_features){
