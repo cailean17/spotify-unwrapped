@@ -998,7 +998,7 @@ const UIController = (function() {
         },
         populateNicheOverTimeChart(){
             let labels = [2019,2020,2021,2022];
-            let final_data = [85, 80, 70, 60];
+            let final_data = [90, 855, 70, 60];
 
         
             
