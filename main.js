@@ -2,6 +2,7 @@
     // import myJson from "./mood_data.json" assert {type: 'json'};
     
 var nnData= JSON.parse(data);
+var testingData = JSON.parse(testing_data)
 
         
 
@@ -58,6 +59,7 @@ var nnData= JSON.parse(data);
         errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
+    testNeuralNetwork();
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
            
@@ -82,6 +84,34 @@ var nnData= JSON.parse(data);
 
             
 }
+
+ function testNeuralNetwork(){
+        let model_accuracy = 0.0;
+        let correct_predictions = 0;
+        let totatl_testing_entries = testingData.length;
+        for(let i = 0; i < totatl_testing_entries; i++){
+           var result = net.run({
+            danceability: testingData[i]["danceability"],
+            acousticness: testingData[i]["acoustincess"],
+            energy: testingData[i]["energy"],
+            instrumentalness: testingData[i]["instrumentalness"],
+            liveness: testingData[i]["liveness"],
+            valence:testingData[i]["valence"],
+            speechiness:testingData[i]["speechiness"],
+        })
+        var predictedMood = denoramlizeMoods(result["mood"])
+
+        if(predictedMood == testingData[i]["mood"]){
+            correct_predictions++;
+        } 
+
+        model_accuracy = correct_predictions / totat_testing_entries;
+        return model_accuracy;
+
+        }
+     
+
+ }
 
 
 
