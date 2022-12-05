@@ -562,6 +562,7 @@ const UIController = (function() {
         populate_top_tracks: "#populate_top_tracks",
         populate_genre_chart: "#populate_genre_chart",
         canvas : "#canvas",
+        canvas2 : "#canvas2",
         underground_mainstream_container : "#underground_mainstream",
         popularity_rating : "#music_popularity_rating",
         search_bar_track_recommendation_name: "#search_bar_track_recommendation_name",
@@ -979,9 +980,33 @@ const UIController = (function() {
                 }]
             };
 
-            const canvas = document.querySelector(DOMElements.canvas).getContext('2d');
-            let chart = new Chart(canvas, {
-                type:"bar",
+            
+
+        },
+        populateNicheOverTimeChart(){
+            let labels = [2019,2020,2021,2022];
+            let final_data = [85, 80, 70, 60];
+
+        
+            
+            console.log("Labels" + labels);
+            Chart.defaults.font.size = 20;
+            Chart.defaults.font.family  = "Circular Std";
+            Chart.defaults.color = "#FFFFFF";
+
+            const data = {
+                labels: labels,
+                datasets: [{
+                label: 'Nicheness over the Years',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                color : "#FFF",
+                data: final_data,
+                }]
+            };
+            const canvas2 = document.querySelector(DOMElements.canvas2).getContext('2d');
+            let chart = new Chart(canvas2, {
+                type:"line",
                 data:data,
                 options:{
                     scales:{
@@ -994,10 +1019,12 @@ const UIController = (function() {
 
             });
 
+
         },
         populatePopularityRating() {
          document.querySelector(DOMElements.underground_mainstream_container).style.visibility = "visible";
          document.querySelector(DOMElements.popularity_rating).innerHTML = sessionStorage.getItem("user_popularity_rating");
+         populateNicheOverTimeChart();
         },
 
        async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function, get_recommendations, get_track_features){
