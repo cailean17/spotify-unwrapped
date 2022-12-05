@@ -93,7 +93,7 @@ var testingData = JSON.parse(testing_data);
         for(let i = 0; i < total_testing_entries; i++){
            var result = net.run({
             danceability: testingData[i]["danceability"],
-            acousticness: testingData[i]["acoustincess"],
+            acousticness: testingData[i]["acousticness"],
             energy: testingData[i]["energy"],
             instrumentalness: testingData[i]["instrumentalness"],
             liveness: testingData[i]["liveness"],
