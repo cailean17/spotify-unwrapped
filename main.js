@@ -88,8 +88,8 @@ var testingData = JSON.parse(testing_data);
  function testNeuralNetwork(){
         let model_accuracy = 0.0;
         let correct_predictions = 0;
-        let totatl_testing_entries = testingData.length;
-        for(let i = 0; i < totatl_testing_entries; i++){
+        let total_testing_entries = testingData.length;
+        for(let i = 0; i < total_testing_entries; i++){
            var result = net.run({
             danceability: testingData[i]["danceability"],
             acousticness: testingData[i]["acoustincess"],
@@ -105,7 +105,7 @@ var testingData = JSON.parse(testing_data);
             correct_predictions++;
         } 
 
-        model_accuracy = correct_predictions / totat_testing_entries;
+        model_accuracy = correct_predictions / total_testing_entries;
         return model_accuracy;
 
         }
