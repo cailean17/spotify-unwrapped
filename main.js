@@ -59,7 +59,7 @@ var testingData = JSON.parse(testing_data);
         errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
-    testNeuralNetwork();
+    testNeuralNetwork(net);
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
            
@@ -85,7 +85,7 @@ var testingData = JSON.parse(testing_data);
             
 }
 
- function testNeuralNetwork(){
+ function testNeuralNetwork(net){
         let model_accuracy = 0.0;
         let correct_predictions = 0;
         let total_testing_entries = testingData.length;
