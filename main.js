@@ -133,21 +133,22 @@ var testingData = JSON.parse(testing_data);
         console.log('TESTING DATA MOOD' + result["mood"]);
         var predictedMood = denoramlizeMoods(result["mood"])
 
-        if(predictedMood == "Happy"){
-            model_happy_predictions += 1;
-        } 
-        else if(predictedMood == "Sad"){
-            model_sad_predictions += 1;
-        }
-        else if(predictedMood == "Calm"){
-            model_calm_predictions += 1;
-        }
-        else if(predictedMood == "Energetic"){
-            model_energetic_predictions += 1;
-        }
+      
 
         if(predictedMood == testingData[i]["mood"]){
             correct_predictions += 1;
+            if(predictedMood == "Happy"){
+                model_happy_predictions += 1;
+            } 
+            else if(predictedMood == "Sad"){
+                model_sad_predictions += 1;
+            }
+            else if(predictedMood == "Calm"){
+                model_calm_predictions += 1;
+            }
+            else if(predictedMood == "Energetic"){
+                model_energetic_predictions += 1;
+            }
            
         } 
 
@@ -156,10 +157,10 @@ var testingData = JSON.parse(testing_data);
 
         }
 
-        console.log("TOTAL HAPPY " + total_testing_happy_entries + " PREDICTED HAPPY " + model_happy_predictions);
-        console.log("TOTAL CALM " + total_testing_calm_entries + " PREDICTED CALM " + model_calm_predictions);
-        console.log("TOTAL SAD " + total_testing_sad_entries + " PREDICTED SAD " + model_sad_predictions);
-        console.log("TOTAL ENERGETIC " + total_testing_energetic_entries + " PREDICTED ENERGETIC " + model_energetic_predictions);
+        console.log("TOTAL HAPPY " + total_testing_happy_entries + " CORRECT PREDICTED HAPPY " + model_happy_predictions);
+        console.log("TOTAL CALM " + total_testing_calm_entries + " CORRECT PREDICTED CALM " + model_calm_predictions);
+        console.log("TOTAL SAD " + total_testing_sad_entries + " CORRECT PREDICTED SAD " + model_sad_predictions);
+        console.log("TOTAL ENERGETIC " + total_testing_energetic_entries + "CORRECT PREDICTED ENERGETIC " + model_energetic_predictions);
 
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
