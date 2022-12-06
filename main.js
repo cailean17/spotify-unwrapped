@@ -173,7 +173,7 @@ var testingData = JSON.parse(testing_data);
             }
            
         } 
-        if(testingData[i][mood] == "Happy"){
+        if(testingData[i]["mood"] == "Happy"){
             if(predictedMood == "Happy"){
                 happy_happy += 1;
             }
@@ -187,7 +187,7 @@ var testingData = JSON.parse(testing_data);
                 happy_energetic +=1;
             }
         }
-        else if(testingData[i][mood] == "Sad"){
+        else if(testingData[i]["mood"] == "Sad"){
             if(predictedMood == "Happy"){
                 sad_happy += 1;
             }
@@ -201,7 +201,7 @@ var testingData = JSON.parse(testing_data);
                 sad_energetic +=1;
             }
         }
-        else if(testingData[i][mood] == "Calm"){
+        else if(testingData[i]["mood"] == "Calm"){
             if(predictedMood == "Happy"){
                 calm_happy += 1;
             }
@@ -215,7 +215,7 @@ var testingData = JSON.parse(testing_data);
                 calm_energetic +=1;
             }
         }
-        else if(testingData[i][mood] == "Energetic"){
+        else if(testingData[i]["mood"] == "Energetic"){
             if(predictedMood == "Happy"){
                 energetic_happy += 1;
             }
