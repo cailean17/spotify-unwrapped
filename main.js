@@ -252,10 +252,10 @@ var testingData = JSON.parse(testing_data);
 
         });
 
-        // console.log("TOTAL HAPPY " + total_testing_happy_entries + " CORRECT PREDICTED HAPPY " + model_happy_predictions);
-        // console.log("TOTAL CALM " + total_testing_calm_entries + " CORRECT PREDICTED CALM " + model_calm_predictions);
-        // console.log("TOTAL SAD " + total_testing_sad_entries + " CORRECT PREDICTED SAD " + model_sad_predictions);
-        // console.log("TOTAL ENERGETIC " + total_testing_energetic_entries + "CORRECT PREDICTED ENERGETIC " + model_energetic_predictions);
+        console.log("TOTAL HAPPY " + total_testing_happy_entries + " CORRECT PREDICTED HAPPY " + model_happy_predictions);
+        console.log("TOTAL CALM " + total_testing_calm_entries + " CORRECT PREDICTED CALM " + model_calm_predictions);
+        console.log("TOTAL SAD " + total_testing_sad_entries + " CORRECT PREDICTED SAD " + model_sad_predictions);
+        console.log("TOTAL ENERGETIC " + total_testing_energetic_entries + "CORRECT PREDICTED ENERGETIC " + model_energetic_predictions);
 
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
