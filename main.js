@@ -361,6 +361,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("y2", 5);
 
 	columnLabels.append("text")
+        .style("fill", "white")
 	    .attr("x", 30)
 	    .attr("y", y.rangeBand() / 2)
 	    .attr("dy", ".22em")
@@ -383,6 +384,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("y2", y.rangeBand() / 2);
 
 	rowLabels.append("text")
+        .style("fill", "white")
 	    .attr("x", -8)
 	    .attr("y", y.rangeBand() / 2)
 	    .attr("dy", ".32em")
@@ -431,6 +433,7 @@ var testingData = JSON.parse(testing_data);
     .orient("right");
 
     key.append("g")
+    .style("fill", "white")
     .attr("class", "y axis")
     .attr("transform", "translate(41," + margin.top + ")")
     .call(yAxis)
