@@ -298,7 +298,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	var background = svg.append("rect")
-	    .style("stroke", "black")
+	    .style("stroke", "white")
 	    .style("stroke-width", "2px")
 	    .attr("width", width)
 	    .attr("height", height);
