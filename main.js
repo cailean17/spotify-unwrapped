@@ -55,7 +55,6 @@ var testingData = JSON.parse(testing_data);
         log:true,
         logPeriod:100,
         iterations: 20000,
-        activation: 'tanh',
         learningRate: 0.3,
         errorThresh: 0.005,
     });
