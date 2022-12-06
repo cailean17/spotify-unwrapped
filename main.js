@@ -337,7 +337,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("x", x.rangeBand() / 2)
 	    .attr("y", y.rangeBand() / 2)
 	    .attr("text-anchor", "middle")
-	    .style("fill", function(d, i) { return d >= maxValue/2 ? 'white' : 'black'; })
+	    .style("fill", function(d, i) { return d >= maxValue/2 ? 'blue' : 'white'; })
 	    .text(function(d, i) { return d; });
 
 	row.selectAll(".cell")
