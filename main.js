@@ -38,7 +38,7 @@ var testingData = JSON.parse(testing_data);
     const trainingData = [];
   
     for(let i = 0; i<nnData.length; i++){
-             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"], "speechiness" : nnData[i]["speechiness"]});
+             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"]});
              output.push({"mood": normalizeMoods(nnData[i]["mood"])});
 
     }
@@ -61,7 +61,7 @@ var testingData = JSON.parse(testing_data);
     console.log("TRAINING" + JSON.stringify(trainingData));
     testNeuralNetwork(net);
     
-    function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, speechiness, net) {
+    function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, net) {
            
             var raw_result = net.run({
                 danceability: danceability,
@@ -70,7 +70,6 @@ var testingData = JSON.parse(testing_data);
                 instrumentalness:instrumentalness,
                 liveness:liveness,
                 valence: valence,
-                speechiness: speechiness,
             
             })
 
