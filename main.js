@@ -298,8 +298,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	var background = svg.append("rect")
-	    .style("stroke", "white")
-	    .style("stroke-width", "2px")
+	   
 	    .attr("width", width)
 	    .attr("height", height);
 
@@ -354,7 +353,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("transform", function(d, i) { return "translate(" + x(i) + "," + height + ")"; });
 
 	columnLabels.append("line")
-		.style("stroke", "black")
+		.style("stroke", "white")
 	    .style("stroke-width", "1px")
 	    .attr("x1", x.rangeBand() / 2)
 	    .attr("x2", x.rangeBand() / 2)
@@ -376,7 +375,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("transform", function(d, i) { return "translate(" + 0 + "," + y(i) + ")"; });
 
 	rowLabels.append("line")
-		.style("stroke", "black")
+		.style("stroke", "white")
 	    .style("stroke-width", "1px")
 	    .attr("x1", 0)
 	    .attr("x2", -5)
