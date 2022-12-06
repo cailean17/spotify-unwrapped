@@ -247,8 +247,8 @@ var testingData = JSON.parse(testing_data);
             container: '#confusion_matrix',
             data: confusion_matrix,
             labels: data_labels,
-                start_Color: '#ffffff',
-                end_Color: '#36a23eb',
+                start_color: '#ffffff',
+                end_color: '#36a23eb',
 
         });
 
