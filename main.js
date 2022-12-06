@@ -350,7 +350,7 @@ var testingData = JSON.parse(testing_data);
 	    .data(labelsData)
 	    .enter().append("g")
 	    .attr("class", "column-label")
-	    .attr("transform", function(d, i) { return "translate(" + x(i) + "," + height + ")"; });
+	    .attr("transform", function(d, i) { return "translate(" + x(i) + "," + (height+20) + ")"; });
 
 	columnLabels.append("line")
 		.style("stroke", "white")
