@@ -247,8 +247,8 @@ var testingData = JSON.parse(testing_data);
             container: '#confusion_matrix',
             data: confusion_matrix,
             labels: data_labels,
-                start_color: '#ffffff',
-                end_color: '#66cccc',
+                start_color: '#ccffff',
+                end_color: '#ff6699',
 
         });
 
@@ -337,7 +337,7 @@ var testingData = JSON.parse(testing_data);
 	    .attr("x", x.rangeBand() / 2)
 	    .attr("y", y.rangeBand() / 2)
 	    .attr("text-anchor", "middle")
-	    .style("fill", function(d, i) { return d >= maxValue/2 ? 'black' : 'white'; })
+	    .style("fill", function(d, i) { return d >= maxValue/2 ? 'white' : '#66CCCC' })
 	    .text(function(d, i) { return d; });
 
 	row.selectAll(".cell")
