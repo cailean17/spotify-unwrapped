@@ -56,8 +56,8 @@ var testingData = JSON.parse(testing_data);
         logPeriod:100,
         iterations: 20000,
         activation: "sigmoid",
-        momentum: 0.2,
-        learningRate: 0.5,
+        momentum: 0.3,
+        learningRate: 0.6,
         errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
