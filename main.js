@@ -49,13 +49,13 @@ var testingData = JSON.parse(testing_data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[3, 4]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[5, 6]});
 
     const stats = net.train(trainingData, {
         log:true,
         logPeriod:100,
         iterations: 20000,
-        activation: "relu",
+        activation: "sigmoid",
         learningRate: 0.3,
         errorThresh: 0.005,
     });
