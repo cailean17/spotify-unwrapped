@@ -54,10 +54,10 @@ var testingData = JSON.parse(testing_data);
     const stats = net.train(trainingData, {
         log:true,
         logPeriod:100,
-        iterations: 25000,
+        iterations: 20000,
         activation: "sigmoid",
         momentum: 0.2,
-        learningRate: 0.3,
+        learningRate: 0.5,
         errorThresh: 0.005,
     });
     console.log("TRAINING" + JSON.stringify(trainingData));
