@@ -56,7 +56,7 @@ var testingData = JSON.parse(testing_data);
         logPeriod:100,
         iterations: 20000,
         activation: "sigmoid",
-        momentum: 0.9,
+        momentum: 0.2,
         learningRate: 0.3,
         errorThresh: 0.005,
     });
