@@ -54,7 +54,7 @@ var testingData = JSON.parse(testing_data);
     const stats = net.train(trainingData, {
         log:true,
         logPeriod:100,
-        iterations: 20000,
+        iterations: 25000,
         activation: "sigmoid",
         momentum: 0.2,
         learningRate: 0.3,
