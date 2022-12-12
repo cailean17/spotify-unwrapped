@@ -629,7 +629,7 @@ const APIController = (function() {
             if(token == null){
                 token = await _getToken();
             }
-        const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=long_term', {
+        const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=short_term', {
             method:'GET',
             headers: {
                
@@ -681,7 +681,7 @@ const APIController = (function() {
         if(token == null){
             token = await _getToken();
         }
-        const result = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=long_term', {
+        const result = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=short_term', {
             method:'GET',
             headers: {
                
@@ -776,6 +776,10 @@ const APIController = (function() {
         console.log("Getting Specialized Playlist Tracks" + result.status.toString());
         var data  = await result.json();
         return data;
+    }
+
+    const _getNichenessOverTime = async(token) => {
+        
     }
 
     return {
