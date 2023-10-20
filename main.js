@@ -49,9 +49,10 @@ var testingData = JSON.parse(testing_data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[5,6]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[5,6], activation: 'relu'});
 
     const stats = net.train(trainingData, {
+        
         log:true,
         logPeriod:100,
         iterations: 20000,
@@ -777,9 +778,6 @@ const APIController = (function() {
         return data;
     }
 
-    const _getNichenessOverTime = async(token) => {
-        
-    }
 
     return {
 
