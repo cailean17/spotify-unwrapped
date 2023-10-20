@@ -49,7 +49,7 @@ var testingData = JSON.parse(testing_data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[14]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[22]});
 
     const stats = net.train(trainingData, {
         
