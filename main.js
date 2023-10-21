@@ -1,6 +1,7 @@
 
-    // import myJson from "./mood_data.json" assert {type: 'json'};
     
+import neuralNetwork from "./neuralNetwork.json" assert {type: 'json'};
+
 var nnData = JSON.parse(data);
 var testingData = JSON.parse(testing_data);
 
@@ -38,7 +39,13 @@ var testingData = JSON.parse(testing_data);
     const trainingData = [];
   
     for(let i = 0; i<nnData.length; i++){
-             input.push({"danceability" : nnData[i]["danceability"], "acousticness" : nnData[i]["acousticness"], "energy" : nnData[i]["energy"], "instrumentalness" : nnData[i]["instrumentalness"], "liveness" : nnData[i]["liveness"], "valence" : nnData[i]["valence"]});
+             input.push({
+             "danceability" : nnData[i]["danceability"], 
+             "acousticness" : nnData[i]["acousticness"], 
+             "energy" : nnData[i]["energy"], 
+             "instrumentalness" : nnData[i]["instrumentalness"], 
+             "liveness" : nnData[i]["liveness"], 
+             "valence" : nnData[i]["valence"]});
              output.push({"mood": normalizeMoods(nnData[i]["mood"])});
 
     }
@@ -49,18 +56,21 @@ var testingData = JSON.parse(testing_data);
         output:output[i],
         });
     }
-    const net = new brain.NeuralNetwork({hiddenLayers:[5,6]});
+    const net = new brain.NeuralNetwork({hiddenLayers:[12, 3]});
+    //using imported neuralNetwork
+    net.fromJSON(neuralNetwork);
 
-    const stats = net.train(trainingData, {
+    //training neural network
+    // const stats = net.train(trainingData, {
         
-        log:true,
-        logPeriod:100,
-        iterations: 20000,
-        momentum: 0.1,
-        learningRate: 0.3,
-        errorThresh: 0.005,
-    });
-    console.log("TRAINING" + JSON.stringify(trainingData));
+    //     log:true,
+    //     logPeriod:100,
+    //     iterations: 20000,
+    //     momentum: 0.6,
+    //     learningRate: 0.4,
+    //     errorThresh: 0.004,
+    // });
+    // console.log("TRAINING" + JSON.stringify(trainingData));
     testNeuralNetwork(net);
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, net) {
@@ -241,9 +251,13 @@ var testingData = JSON.parse(testing_data);
             [happy_happy, happy_sad, happy_calm, happy_energetic],
             [sad_happy, sad_sad, sad_calm, sad_energetic],
             [calm_happy, calm_sad, calm_calm, calm_energetic],
-            [energetic_happy, energetic_sad, energetic_calm, energetic_energetic]
-        ]
+            [energetic_happy, energetic_sad, energetic_calm, energetic_energetic]];
+
         var data_labels = ["Happy", "Sad", 'Calm', "Energetic"];
+
+        document.getElementById('network_render').innerHTML = brain.utilities.toSVG(
+            net.toJSON()
+          );
 
         confusionMatrix({
             container: '#confusion_matrix',
@@ -261,6 +275,21 @@ var testingData = JSON.parse(testing_data);
 
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
+        // if(model_accuracy >= 0.70){
+        //     const filename = 'data.json';
+        //         const jsonStr = JSON.stringify(net.toJSON());
+        //         let element = document.createElement('a');
+        //         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonStr));
+        //         element.setAttribute('download', filename);
+
+        //         element.style.display = 'none';
+        //         document.body.appendChild(element);
+
+        //         element.click();
+
+        //         document.body.removeChild(element);
+        
+        // }
         return model_accuracy;
      
 
