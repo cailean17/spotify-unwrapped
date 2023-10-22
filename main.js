@@ -89,7 +89,7 @@ var testingData = JSON.parse(testing_data);
             console.log("Initial" + JSON.stringify(raw_result));
             var final_result = denoramlizeMoods(raw_result["mood"])
 
-            console.log(stats);
+            //console.log(stats);
             console.log("TEST" + final_result);
 
             return final_result;
