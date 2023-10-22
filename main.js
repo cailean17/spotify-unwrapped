@@ -58,7 +58,7 @@ var testingData = JSON.parse(testing_data);
     }
     const net = new brain.NeuralNetwork({hiddenLayers:[12, 3]});
     //using imported neuralNetwork
-    
+
     net.fromJSON(neuralNetwork);
 
     //training neural network
@@ -479,11 +479,13 @@ var testingData = JSON.parse(testing_data);
     
  
  
-    function onPageLoad(){
+    export function onPageLoad(){
         if(window.location.search.length > 0){
             handleRedirect();   
         }
     }
+
+    window.onPageLoad = onPageLoad;
     
     function getCode(){
         let code = null;
