@@ -504,7 +504,7 @@ var testingData = JSON.parse(testing_data);
     
         console.log("CODE" + code);
         //APICtrl.getToken();
-       window.location.href = "http://127.0.0.1:5500/";
+       window.location.href = "https://cailean17.github.io/spotify-unwrapped/";
     }
 
 
