@@ -59,11 +59,23 @@
       <a class="btn btn-primary btn-lg" role="button" id="get_started">Get Started</a>
     </div>
     <div class="container" id="main_page">
-      <div class="container my-2">
+      <div class="container my-5">
+        <h2 class="">Neural Network</h2>
+        <h6>Confusion Matrix & Network Model</h6>
+        <div class = "container pl-3 row">
+          <h6>Model Accuracy: </h6>
+          <h3 href="#" style="color:#ff6699"id="model_accuracy" class = "pl-2"></h3>
+        </div>
+        <div style="display:inline-block" id="confusion_matrix"></div>
+        <div style="display:inline-block" id="legend"></div>
+        <div style="display:inline-block" id="network_render"></div>
+      </div>
+      
+      <div class="container my-2 pt-2">
         <div class="container">
           <div class="row">
             <div class="col-sm">
-              <h2 class="">Your Top 3 Artists</h1>
+              <h2 class="">Your Top 3 Artists</h2>
             </div>
             <div class="col-xs">
               <button type="button" class="btn btn-secondary" id="populate_top_artist">Populate</button>
@@ -82,7 +94,7 @@
 
           <div class="row">
             <div class="col-sm">
-              <h2 class="">Your Top 3 Tracks</p>
+              <h2 class="">Your Top 3 Tracks</h2>
             </div>
             <div class="col-xs">
               <button type="button" class="btn btn-secondary" id="populate_top_tracks">Populate</button>
@@ -111,13 +123,7 @@
 
         </div>
 
-        <div class="container my-5">
-          <div style="display:inline-block" id="confusion_matrix"></div>
-          <div style="display:inline-block" id="legend"></div>
-        </div>
-        <div class = "container my-2 pl-5">
-          <div style="display:inline-block" id="network_render"></div>
-        </div>
+        
         <div class="container my-5 variable-vis" id="underground_mainstream">
 
           <div class="row">

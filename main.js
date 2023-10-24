@@ -276,6 +276,7 @@ var testingData = JSON.parse(testing_data);
 
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
+        document.querySelector('#model_accuracy').innerHTML += Math.round(model_accuracy * 100) + "%";
         // if(model_accuracy >= 0.78){
         //     const filename = 'data.json';
         //         const jsonStr = JSON.stringify(net.toJSON());
@@ -577,25 +578,6 @@ const APIController = (function() {
 
         window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirect_uri}&scope=${scope}`;
         
-        // while(true){
-               
-        //     if(window.location.href.includes(homeURL) && window.location.href.length > homeURL.length ){
-        //         onPageLoad();
-        //         break;
-        //     }
-           
-
-        // }
-        // const  result = await fetch(`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirect_uri}&scope=${scope}`, {
-        //     mode: "no-cors",
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //   },
-
-
-            
-        // });
        
      
 
@@ -605,8 +587,6 @@ const APIController = (function() {
         var auth_code = sessionStorage.getItem('auth_code');
         console.log("AUTH CODE " + auth_code);
 
-        // const body = `client_id=${clientId}&client_secret=${clientSecret}&grant_type=authorization_code&code=${auth_code}&redirect_uri=${redirect_uri}`
-        // console.log("BODY"+ body);
         const result = await fetch( 'https://accounts.spotify.com/api/token', {
            mode:'cors',
             method:'POST',
@@ -623,12 +603,6 @@ const APIController = (function() {
               
             })
         })
-     
-        // let xhr = new XMLHttpRequest();
-        // xhr.open("POST", "https://accounts.spotify.com/api/token", true );
-        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        // xhr.setRequestHeader('Authorization', 'Basic ' + btoa(clientId + ":" + clientSecret));
-        // xhr.send(body);
 
 
 
@@ -857,6 +831,7 @@ const APIController = (function() {
 const UIController = (function() {
 
     const DOMElements = {
+        modelAccuracy : '#model_accuracy',
         topArtist1 : '#top_artist_1',
         topArtist2 : '#top_artist_2',
         topArtist3 : "#top_artist_3",
@@ -898,6 +873,8 @@ const UIController = (function() {
             
 
         },
+
+
        async populateTopTracksList(track1, track2, track3, track1analysis, track2analysis, track3analysis, track_playback_function, recommendation_function, token){
             var track1_descriptions =    determineTrackDescriptions(track1analysis);
             var track2_descriptions =   determineTrackDescriptions(track2analysis);
