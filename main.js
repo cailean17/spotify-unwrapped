@@ -1348,8 +1348,8 @@ const UIController = (function() {
         },
 
        async  populateSearchedTrackRecommendation(token, search_track_recommendation, track_playback_function, get_recommendations, get_track_features){
-           trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
-           artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
+            var trackName =  document.querySelector(DOMElements.search_bar_track_recommendation_name).value;
+            var artist =  document.querySelector(DOMElements.search_bar_track_recommendation_artist).value;
             var search_query = await search_track_recommendation(token, trackName, artist);
             var track_analysis = await get_track_features(token, search_query.tracks.items[0].id);
             var recommendations = await get_recommendations(token, track_analysis);
