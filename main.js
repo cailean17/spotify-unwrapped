@@ -1,6 +1,6 @@
 
     
-import neuralNetwork from "./neuralNetwork.json" assert {type: 'json'};
+import neuralNetwork from "./neuralNetwork(81).json" assert {type: 'json'};
 
 var nnData = JSON.parse(data);
 var testingData = JSON.parse(testing_data);
@@ -67,11 +67,11 @@ var testingData = JSON.parse(testing_data);
     //     log:true,
     //     logPeriod:100,
     //     iterations: 20000,
-    //     momentum: 0.6,
+    //     momentum: 0.75,
     //     learningRate: 0.4,
-    //     errorThresh: 0.004,
+    //     errorThresh: 0.002,
     // });
-    // console.log("TRAINING" + JSON.stringify(trainingData));
+    console.log("TRAINING" + JSON.stringify(trainingData));
     testNeuralNetwork(net);
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, net) {
@@ -276,7 +276,7 @@ var testingData = JSON.parse(testing_data);
 
         model_accuracy = correct_predictions / total_testing_entries;
         console.log("MODEL_ACCURACY: " + model_accuracy);
-        // if(model_accuracy >= 0.70){
+        // if(model_accuracy >= 0.78){
         //     const filename = 'data.json';
         //         const jsonStr = JSON.stringify(net.toJSON());
         //         let element = document.createElement('a');
@@ -291,7 +291,7 @@ var testingData = JSON.parse(testing_data);
         //         document.body.removeChild(element);
         
         // }
-        return model_accuracy;
+        // return model_accuracy;
      
 
  }
