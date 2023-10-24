@@ -61,7 +61,6 @@ var testingData = JSON.parse(testing_data);
 
     net.fromJSON(neuralNetwork);
 
-    //training neural network
     // const stats = net.train(trainingData, {
         
     //     log:true,
@@ -71,7 +70,10 @@ var testingData = JSON.parse(testing_data);
     //     learningRate: 0.4,
     //     errorThresh: 0.002,
     // });
-    console.log("TRAINING" + JSON.stringify(trainingData));
+
+    // console.log(stats);
+    // console.log("TRAINING" + JSON.stringify(trainingData));
+
     testNeuralNetwork(net);
     
     function runNeuralNetwork(danceability, acousticness, energy, instrumentalness, liveness, valence, net) {
@@ -668,17 +670,17 @@ const APIController = (function() {
         });
         var data = await result.json();
         data.items.forEach(function(element){
-            console.log("ELEMENTS" + element.genres[0])
+            // console.log("ELEMENTS" + element.genres[0])
             user_genre_list.push(element.genres[0]);
             artist_popularities.push(element.popularity);
         })
-        console.log("POPULARITY LIST" + artist_popularities.toString());
-        console.log("USER GENRE LIST" + user_genre_list.toString());
+        // console.log("POPULARITY LIST" + artist_popularities.toString());
+        // console.log("USER GENRE LIST" + user_genre_list.toString());
         const average = (array) => array.reduce((a, b) => a + b) / array.length;
     
         sessionStorage.setItem("user_popularity_rating", Math.trunc(average(artist_popularities)));
         var map = user_genre_list.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
-        console.log(map );
+        console.log(map);
        
         return map;
     }
@@ -1243,15 +1245,6 @@ const UIController = (function() {
             Chart.defaults.font.family  = "Circular Std";
             Chart.defaults.color = "#FFFFFF";
 
-            // const labels = [
-            //     'January',
-            //     'February',
-            //     'March',
-            //     'April',
-            //     'May',;
-            //     'June',
-            // ];
-
             const data = {
                 labels: labels,
                 datasets: [{
@@ -1280,7 +1273,7 @@ const UIController = (function() {
 
         },
         populateNicheOverTimeChart(){
-            let labels = [2019,2020,2021,2022];
+            let labels = [2019,2020,2021,2022,];
             let final_data = [90, 85, 70, 60];
 
         
