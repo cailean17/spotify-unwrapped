@@ -12,6 +12,7 @@ website hosted on github pages: https://cailean17.github.io/spotify-unwrapped/
 
 
 ## How the ML Model works
-![github 3](https://user-images.githubusercontent.com/55571023/205805610-24de44c1-d56f-4477-b934-124764e6b0a1.png)
+![Screenshot 2023-10-24 223302](https://github.com/cailean17/spotify-unwrapped/assets/55571023/5c838d54-0af6-4426-bb6d-27d73efe6328)
+
 
   Spotify API offers raw data on a track's features. I focused on using three main features which include danceability, energy, and valence to accurately determine a mood of a song. By compiling 100s of songs from premade spotify playlists for specific moods, I created learning and testing data. The ML Model is built using brain.js and runs realtime on the browser. Currently, it can accurately classify tracks under 4 moods: Happy, Sad, Energetic, or Calm. Furthermore, the second ML Model also uses Spotify Data and finds songs that share similar track features.
