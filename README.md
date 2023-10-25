@@ -5,11 +5,9 @@ Click each album cover to easily play and preview a track recommendation on your
 
 website hosted on github pages: https://cailean17.github.io/spotify-unwrapped/
 ![Screenshot 2023-10-24 223542](https://github.com/cailean17/spotify-unwrapped/assets/55571023/86218d9f-8b95-4a48-9ad4-380565f96721)
-![Screenshot 2023-10-23 234521](https://github.com/cailean17/spotify-unwrapped/assets/55571023/9aa95576-6c97-4a65-a0eb-362d98d9ffad)
+![Screenshot 2023-10-24 223817](https://github.com/cailean17/spotify-unwrapped/assets/55571023/c3bdb232-2c87-4df5-a2e9-1e6c23d0b3a9)
+![Screenshot 2023-10-24 223834](https://github.com/cailean17/spotify-unwrapped/assets/55571023/56709b19-0fd4-4631-bace-85aa2c803c89)
 
-![github 2](https://user-images.githubusercontent.com/55571023/205805600-399fec65-bba7-471d-a922-aa5e89ef2e3f.png)
-
-![Screenshot 2022-10-11 212706](https://user-images.githubusercontent.com/55571023/195250806-039935b9-dbf2-4abf-bac3-a33ced6d3bd8.png)
 
 
 ## How the ML Model works
