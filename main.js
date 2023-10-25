@@ -57,6 +57,7 @@ var testingData = JSON.parse(testing_data);
         });
     }
     const net = new brain.NeuralNetwork({hiddenLayers:[12, 3]});
+    
     //using imported neuralNetwork
 
     net.fromJSON(neuralNetwork);
@@ -1404,9 +1405,9 @@ const UIController = (function() {
              function() {
                  track_playback_function(token, recommendations.tracks[1].uri, false)
              });
-             document.querySelector(`#searched_track_${recommendations.tracks[2].id}_albumcover`).addEventListener('click', 
+             document.querySelector(`#searched_track_${recommendations.tracks[3].id}_albumcover`).addEventListener('click', 
              function() {
-                 track_playback_function(token, recommendations.tracks[2].uri, false)
+                 track_playback_function(token, recommendations.tracks[3].uri, false)
              });
         }
        
