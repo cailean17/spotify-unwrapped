@@ -5,7 +5,8 @@ Click each album cover to easily play and preview a track recommendation on your
 
 website hosted on github pages: https://cailean17.github.io/spotify-unwrapped/
 ![Screenshot 2023-10-24 223542](https://github.com/cailean17/spotify-unwrapped/assets/55571023/86218d9f-8b95-4a48-9ad4-380565f96721)
-![github 1png](https://user-images.githubusercontent.com/55571023/205805583-83b92428-54c3-4766-88a7-e34bf55b7dde.png)
+![Screenshot 2023-10-23 234521](https://github.com/cailean17/spotify-unwrapped/assets/55571023/9aa95576-6c97-4a65-a0eb-362d98d9ffad)
+
 ![github 2](https://user-images.githubusercontent.com/55571023/205805600-399fec65-bba7-471d-a922-aa5e89ef2e3f.png)
 
 ![Screenshot 2022-10-11 212706](https://user-images.githubusercontent.com/55571023/195250806-039935b9-dbf2-4abf-bac3-a33ced6d3bd8.png)
