@@ -1206,10 +1206,10 @@ const UIController = (function() {
         function() {
             track_playback_function(token, track3analysis.uri, false)
         });
-        // document.querySelector("#track1_recommendation1album").addEventListener('click', 
-        // function() {
-        //     track_playback_function(token, recommendations.tracks[1].uri, false)
-        // });
+        document.querySelector("#track1_recommendation1album").addEventListener('click', 
+        function() {
+            track_playback_function(token, recommendations.tracks[1].uri, false)
+        });
         document.querySelector("#track1_recommendation2album").addEventListener('click', 
         function() {
             track_playback_function(token, recommendations.tracks[2].uri, false)
