@@ -613,8 +613,7 @@ const APIController = (function() {
             if(result.status == 200){
                 //var readableData = await result.text();
                 var data = await result.json();
-                var data = JSON.parse(result.text())
-                console.log("TOKEN DATA" + readableData);
+           
 
                 if(data.access_token != undefined){
                     var access_token = data.access_token;
