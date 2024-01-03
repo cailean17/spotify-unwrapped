@@ -923,10 +923,32 @@ const UIController = (function() {
                  <div class = "col-xs pe-4" style="max-width: 172px">
                  <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
-                    <div class = "overlay" >
-                    <button class="btn" > <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> </button>
+                    <div class = "overlay">
+                        <button class="btn"  data-toggle="modal" data-target="#recModal_${recommendations.tracks[1].id}"> 
+                            <i class="fa fa-play-circle-o icon" aria-hidden="true"></i> 
+                        </button>
 
                     </div>
+
+                    <div class="modal fade" id="#recModal_${recommendations.tracks[1].id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            "
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[1].name}</p>
                 <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
@@ -1328,7 +1350,7 @@ const UIController = (function() {
             console.log("REC MOOD " + mood);
             document.querySelector(DOMElements.searched_track_recommendation).insertAdjacentHTML("beforeend", 
             `
-            <div class = "container my-2"> 
+            <div class = "container my-2 list-group-item list-group-item-action"> 
            
             <div class = "row">
             
