@@ -1393,17 +1393,18 @@ const UIController = (function() {
                     
              </div>
              </div>`)
-             document.querySelector(`#searched_track_${search_query.tracks.items[0].id}_albumcover`).addEventListener('click', 
+             document.querySelector(`#searched_track_${search_query.tracks.items[0].id}_albumcover`).addEventListener   
+             ('click', 
              function() {
                  track_playback_function(token, search_query.tracks.items[0].uri, false)
-             });
-             document.querySelector(`#searched_track_${recommendations.tracks[0].id}_albumcover`).addEventListener('click', 
-             function() {
-                 track_playback_function(token, recommendations.tracks[0].uri, false)
              });
              document.querySelector(`#searched_track_${recommendations.tracks[1].id}_albumcover`).addEventListener('click', 
              function() {
                  track_playback_function(token, recommendations.tracks[1].uri, false)
+             });
+             document.querySelector(`#searched_track_${recommendations.tracks[2].id}_albumcover`).addEventListener('click', 
+             function() {
+                 track_playback_function(token, recommendations.tracks[2].uri, false)
              });
              document.querySelector(`#searched_track_${recommendations.tracks[3].id}_albumcover`).addEventListener('click', 
              function() {
