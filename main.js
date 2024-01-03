@@ -612,7 +612,7 @@ const APIController = (function() {
         console.log("RESULT" + result.status.toString());
             if(result.status == 200){
                 //var readableData = await result.text();
-                data = await result.json();
+                var data = await result.json();
                 // var data = JSON.parse(result.text())
                 //console.log("TOKEN DATA" + readableData);
 
@@ -634,19 +634,19 @@ const APIController = (function() {
     }
 
     const _getTopArtists = async(token) => {
-     
-            if(token == null){
-                token = await _getToken();
+            var code = token;
+            if(code == null){
+                code = await _getToken();
             }
         const result = await fetch('https://api.spotify.com/v1/me/top/artists?limit=7&time_range=short_term', {
             method:'GET',
             headers: {
                
-                'Authorization' : 'Bearer ' + token
+                'Authorization' : 'Bearer ' + code
             }
            
         });
-        console.log("TOKEN for top artists" + token);
+        console.log("TOKEN for top artists" + code);
         console.log(result.status.toString());
         console.log(result.body.toString());
         var data = await result.json();
