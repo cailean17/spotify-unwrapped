@@ -613,15 +613,15 @@ const APIController = (function() {
             if(result.status == 200){
                 //var readableData = await result.text();
                 var data = await result.json();
-                // var data = JSON.parse(result.text())
-                //console.log("TOKEN DATA" + readableData);
+                var data = JSON.parse(result.text())
+                console.log("TOKEN DATA" + readableData);
 
                 if(data.access_token != undefined){
-                    access_token = data.access_token;
+                    var access_token = data.access_token;
                     sessionStorage.setItem("access_token", access_token);
                 }
                 if(data.refresh_token != undefined){
-                    refresh_token = data.refresh_token;
+                    var refresh_token = data.refresh_token;
                     sessionStorage.setItem("refresh_token", refresh_token);
 
                 }
