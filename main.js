@@ -917,7 +917,7 @@ const UIController = (function() {
                  </div>
                  <div class = "col-xs px-5 ">
                  
-                     <p style="padding: 0px 0px 0px 70px; color: #6445ba; font-weight:600" class = "lead"> Recommendations </p>
+                     <p style="padding: 0px 0px 0px 70px; color: #6445ba;" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4" style="max-width: 172px">
@@ -1009,7 +1009,7 @@ const UIController = (function() {
                  </div>
                         <div class = "col-xs px-5 ">
                         
-                        <p style="padding: 0px 0px 0px 70px color: #6445ba; font-weight:600" class = "lead"> Recommendations </p>
+                        <p style="padding: 0px 0px 0px 70px; color: #6445ba" class = "lead"> Recommendations </p>
                     
                     <div class = "row justify-content-around">
                     <div class = "col-xs pe-4"  style="max-width: 172px">
@@ -1101,7 +1101,7 @@ const UIController = (function() {
                  </div>
                         <div class = "col-xs px-5 ">
                         
-                        <p style="padding: 0px 0px 0px 70px color: #6445ba; font-weight:600" class = "lead"> Recommendations </p>
+                        <p style="padding: 0px 0px 0px 70px; color: #6445ba;" class = "lead"> Recommendations </p>
                     
                     <div class = "row justify-content-around">
                     <div class = "col-xs pe-4"  style="max-width: 172px">
@@ -1350,8 +1350,9 @@ const UIController = (function() {
 
                  </div>
                  <div class = "col-xs px-5 ">
-                 
-                     <p style="padding: 0px 0px 0px 70px" class = "lead"> Recommendations </p>
+                    <div class = "align-self-center">
+                     <p style="padding: 0px 0px 0px 70px; color: #6445ba;" class = "lead"> Recommendations </p>
+                    </div>
                  
                  <div class = "row justify-content-around">
                  <div class = "col-xs pe-4"  style="max-width: 172px">
