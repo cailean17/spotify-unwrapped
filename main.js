@@ -919,6 +919,30 @@ const UIController = (function() {
                      <p style="padding: 0px 0px 0px 70px; color: #6445ba; font-weight: 600;" class = "lead"> Recommendations </p>
                  
                  <div class = "row justify-content-around">
+                 <div class="modal" id="recModal_${recommendations.tracks[1].id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                 <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                     <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">How well did this suggestion align with your current taste?</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                         </button>
+                     </div>
+                     <div class="modal-body">
+                     
+                         <div class = "row-xs">
+                             <button type="button" class="btn btn-outline-success">Match</button>
+                             <button type="button" class="btn btn-outline-danger">Miss</button>
+
+                         </div>
+                     </div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <button type="button" class="btn btn-primary">Save changes</button>
+                     </div>
+                     </div>
+                 </div>
+                </div>
                  <div class = "col-xs pe-4" style="max-width: 172px">
                  <div class = "xop-box-small" id = "track1_recommendation1album" style = "background:url(${recommendations.tracks[1].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
                  
@@ -929,30 +953,7 @@ const UIController = (function() {
 
                     </div>
 
-                    <div class="modal" id="recModal_${recommendations.tracks[1].id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">How well did this suggestion align with your current taste?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        
-                            <div class = "row-xs"
-                                <button type="button" class="btn btn-outline-success">Match</button>
-                                <button type="button" class="btn btn-outline-danger">Miss</button>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                   
                 </div>
                 <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[1].name}</p>
                 <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
