@@ -956,7 +956,7 @@ const UIController = (function() {
                    
                 </div>
                 <p class = "lead trimText" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[1].name}</p>
-                <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[1].album.name}</p>
+                <p class = "lead trimText" style = "font-size:10px"> ${recommendations.tracks[1].album.artists[0].name}</p>
                 </div>
                 <div class = "col-xs px-4" style="max-width: 172px">
                 <div class = "xop-box-small" id = "track1_recommendation2album"  style = "background:url(${recommendations.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -967,7 +967,7 @@ const UIController = (function() {
                     </div>
                 </div>
                 <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations.tracks[2].name}</p>
-                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[2].album.artists[0].name}</p>
                 </div>
                 <div class = "col-xs ps-4"  style="max-width: 172px">
                 <div class = "xop-box-small" id = "track1_recommendation3album"  style = "background:url(${recommendations.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -978,7 +978,7 @@ const UIController = (function() {
                     </div>
                 </div>
                 <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations.tracks[3].name}</p>
-                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[3].album.name}</p>
+                <p class = "lead" style = "font-size:10px"> ${recommendations.tracks[3].album.artists[0].name}</p>
                 </div>
                 </div>
                 </div>
@@ -1048,7 +1048,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[1].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[1].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[1].album.artists[0].name}</p>
                     </div>
                     <div class = "col-xs px-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track2_recommendation2album"  style = "background:url(${recommendations_track2.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -1059,7 +1059,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track2.tracks[2].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[2].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[2].album.artists[0].name}</p>
                     </div>
                     <div class = "col-xs ps-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track2_recommendation3album"  style = "background:url(${recommendations_track2.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -1070,7 +1070,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track2.tracks[3].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[3].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track2.tracks[3].album.artists[0].name}</p>
                     </div>
                     </div>
                     </div>
@@ -1140,7 +1140,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[1].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[1].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[1].album.artists[0].name}</p>
                     </div>
                     <div class = "col-xs px-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track3_recommendation2album"  style = "background:url(${recommendations_track3.tracks[2].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -1151,7 +1151,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px;  padding-top:10px"> ${recommendations_track3.tracks[2].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[2].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[2].album.artists[0].name}</p>
                     </div>
                     <div class = "col-xs ps-4"  style="max-width: 172px">
                     <div class = "xop-box-small" id = "track3_recommendation3album"  style = "background:url(${recommendations_track3.tracks[3].album.images[0].url}) center/100px 100px no-repeat; cursor:pointer">
@@ -1162,7 +1162,7 @@ const UIController = (function() {
                         </div>
                     </div>
                     <p class = "lead" style = "font-size:10px; padding-top:10px"> ${recommendations_track3.tracks[3].name}</p>
-                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[3].album.name}</p>
+                    <p class = "lead" style = "font-size:10px"> ${recommendations_track3.tracks[3].album.artists[0].name}</p>
                     </div>
                     </div>
                     </div>
